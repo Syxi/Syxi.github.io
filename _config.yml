@@ -113,10 +113,10 @@ theme: matery
 deploy:
 - type: git
   repository: git@github.com:Syxi/Syxi.github.io.git
-  branch: master
+  branch: test
 # - type: coding
 #   repository: https://github.com/Syxi/Syxi.github.io.git
-#   branch: master
+#   branch: test
 - type: baidu_url_submitter
 
 
