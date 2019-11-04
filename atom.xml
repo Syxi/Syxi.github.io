@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>苏彦的博客</title>
+  
+  <subtitle>苏小彦</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://goodboysuyan.ltd/"/>
+  <updated>2019-11-04T18:44:19.771Z</updated>
+  <id>https://goodboysuyan.ltd/</id>
+  
+  <author>
+    <name>苏彦</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一个博客</title>
+    <link href="https://goodboysuyan.ltd/2019/11/05/di-yi-ge-bo-ke/"/>
+    <id>https://goodboysuyan.ltd/2019/11/05/di-yi-ge-bo-ke/</id>
+    <published>2019-11-04T18:44:19.000Z</published>
+    <updated>2019-11-04T18:44:19.771Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
