@@ -327,6 +327,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 
 
+<div class="statis">
+    <span class="count"><a href="/tags" target="_blank">1</a></span>
+    <span class="name">标签</span>
+</div>
+
                     </div>
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
@@ -345,6 +350,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 
 
+
+<div class="statis">
+    <span class="count"><a href="/tags" target="_blank">1</a></span>
+    <span class="name">标签</span>
+</div>
 
                                 </div>
                                 <div class="title">苏彦</div>
@@ -549,7 +559,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: []
+                data: ["测试"]
             }
         ],
         yAxis: [
@@ -562,7 +572,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [],
+                data: [1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -627,7 +637,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">0</span>
+            <span class="white-color">4</span>
             
 
             <br>
@@ -690,8 +700,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

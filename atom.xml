@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-05T13:57:17.775Z</updated>
+  <updated>2019-11-06T08:18:49.157Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -20,13 +20,24 @@
     <title>测试</title>
     <link href="https://goodboysuyan.ltd/2019/11/05/ce-shi/"/>
     <id>https://goodboysuyan.ltd/2019/11/05/ce-shi/</id>
-    <published>2019-11-05T13:57:17.000Z</published>
-    <updated>2019-11-05T13:57:17.775Z</updated>
+    <published>2019-11-05T13:57:00.000Z</published>
+    <updated>2019-11-06T08:18:49.157Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;&amp;emsp;&amp;emsp;测试&lt;/p&gt;
+
+        
+      
+    
     </summary>
     
+    
+      <category term="测试" scheme="https://goodboysuyan.ltd/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
