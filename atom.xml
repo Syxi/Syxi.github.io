@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-06T08:18:49.157Z</updated>
+  <updated>2019-11-07T18:00:00.707Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试</title>
-    <link href="https://goodboysuyan.ltd/2019/11/05/ce-shi/"/>
-    <id>https://goodboysuyan.ltd/2019/11/05/ce-shi/</id>
-    <published>2019-11-05T13:57:00.000Z</published>
-    <updated>2019-11-06T08:18:49.157Z</updated>
+    <title>Java一切皆对象</title>
+    <link href="https://goodboysuyan.ltd/2019/11/08/java-yi-qie-jie-dui-xiang/"/>
+    <id>https://goodboysuyan.ltd/2019/11/08/java-yi-qie-jie-dui-xiang/</id>
+    <published>2019-11-07T17:50:43.000Z</published>
+    <updated>2019-11-07T18:00:00.707Z</updated>
     
     <summary type="html">
     
@@ -29,29 +29,16 @@
       
         
         
-          &lt;p&gt;&amp;emsp;&amp;emsp;测试&lt;/p&gt;
-
+          &lt;h2 id=&quot;1-面向对象编程思想&quot;&gt;&lt;a href=&quot;#1-面向对象编程思想&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+      <category term="面向对象编程" scheme="https://goodboysuyan.ltd/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="测试" scheme="https://goodboysuyan.ltd/tags/%E6%B5%8B%E8%AF%95/"/>
     
-  </entry>
-  
-  <entry>
-    <title>第一个博客</title>
-    <link href="https://goodboysuyan.ltd/2019/11/05/di-yi-ge-bo-ke/"/>
-    <id>https://goodboysuyan.ltd/2019/11/05/di-yi-ge-bo-ke/</id>
-    <published>2019-11-04T18:44:19.000Z</published>
-    <updated>2019-11-04T18:44:19.771Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="Java" scheme="https://goodboysuyan.ltd/tags/Java/"/>
     
   </entry>
   

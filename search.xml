@@ -4,32 +4,25 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/2019/11/05/ce-shi/"/>
-      <url>/2019/11/05/ce-shi/</url>
+      <title>Java一切皆对象</title>
+      <link href="/2019/11/08/java-yi-qie-jie-dui-xiang/"/>
+      <url>/2019/11/08/java-yi-qie-jie-dui-xiang/</url>
       
-        <content type="html"><![CDATA[<p>&emsp;&emsp;测试</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-面向对象编程思想"><a href="#1-面向对象编程思想" class="headerlink" title="1.面向对象编程思想"></a>1.面向对象编程思想</h2><blockquote><p>把所有的有形或无形的事物都看作对象，并给对象赋予相应的属性和行为，建立对象之间的联系，使程序更加立体、形象地解决编程领域的问题。</p></blockquote><h2 id="2-类的关系"><a href="#2-类的关系" class="headerlink" title="2.类的关系"></a>2.类的关系</h2><table><thead><tr><th>类的关系</th><th>描述</th><th>具体实现</th></tr></thead><tbody><tr><td>继承</td><td>父类与子类的关系</td><td>extends ( is-a )</td></tr><tr><td>实现</td><td>接口与实现类之间的关系</td><td>implements ( can-do )</td></tr><tr><td>组合</td><td>整体和部分的同生共死的关系，两者完全不可分，具有相同的生命周期</td><td>类是成员变量 ( contains-a )</td></tr><tr><td>聚合</td><td>整体和部分暂时组合在一起，两者可独立存在</td><td>类是成员变量 ( has -a )</td></tr><tr><td>依赖</td><td>一个类用到另外一个类</td><td>import类 ( use -a )</td></tr></tbody></table><p>类关系中的组合是一种完全绑定的关系，所有成员共同完成一件使命，它们的生命周期是一样的。组合体现的是整体和部分的关系，同生共死，部分不能在整体之间共享。</p><p>聚合是一种可以拆分的整体和部分的关系，是一种非常松散的暂时组合，部分可以拆出来给另一个整体。</p><p>依赖是除组合和聚合的类与类之间的关系，这个类只要import，那就是依赖关系。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 面向对象编程 </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> 测试 </tag>
+            <tag> Java </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第一个博客</title>
-      <link href="/2019/11/05/di-yi-ge-bo-ke/"/>
-      <url>/2019/11/05/di-yi-ge-bo-ke/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
