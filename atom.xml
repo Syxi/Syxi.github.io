@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-07T18:00:00.707Z</updated>
+  <updated>2019-11-08T13:11:11.068Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/08/java-yi-qie-jie-dui-xiang/"/>
     <id>https://goodboysuyan.ltd/2019/11/08/java-yi-qie-jie-dui-xiang/</id>
     <published>2019-11-07T17:50:43.000Z</published>
-    <updated>2019-11-07T18:00:00.707Z</updated>
+    <updated>2019-11-08T13:11:11.068Z</updated>
     
     <summary type="html">
     
@@ -35,10 +35,10 @@
     
     </summary>
     
-      <category term="面向对象编程" scheme="https://goodboysuyan.ltd/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="Java" scheme="https://goodboysuyan.ltd/tags/Java/"/>
+      <category term="面向对象编程" scheme="https://goodboysuyan.ltd/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
