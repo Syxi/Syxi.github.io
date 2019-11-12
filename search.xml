@@ -8,9 +8,21 @@
       <link href="/2019/11/12/fu-xie-yu-chong-zai/"/>
       <url>/2019/11/12/fu-xie-yu-chong-zai/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>##覆写</p><blockquote><p>如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。</p></blockquote><pre><code>public class Father {    public static void main(String[] args) {        Father father = new Son();        father.good();    }    protected void good() {        System.out.println(&quot;叫爸爸&quot;);    }}</code></pre><pre><code>public class Son extends Father {    @Override    public void good() {        System.out.println(&quot;祖安&quot;);    }}</code></pre><h2 id="覆写总结"><a href="#覆写总结" class="headerlink" title="覆写总结"></a>覆写总结</h2><blockquote><p><strong>一大两小两同</strong></p><ul><li><strong>一大</strong>：子类的方法访问权限控制符只能相同或变大。</li><li><strong>两小</strong>：子类抛出异常和方法返回值只能变小（或相同），都能够转型成父类对象。子类的返回值、抛出异常，与父类存在继承关系。</li><li><strong>两同</strong>：方法名和参数必须完全相同。</li></ul></blockquote><h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><blockquote><p>在同一个类中，如果多个方法有相同的名字，不同的参数（参数个数、顺序、类型不同），即称为重载。</p></blockquote>]]></content>
       
       
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 覆写 重载 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -33,7 +45,7 @@
       
         <tags>
             
-            <tag> String类简介 </tag>
+            <tag> String类 </tag>
             
         </tags>
       

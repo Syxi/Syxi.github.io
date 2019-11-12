@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-12T08:50:22.913Z</updated>
+  <updated>2019-11-12T11:54:09.370Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -21,12 +21,29 @@
     <link href="https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/"/>
     <id>https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/</id>
     <published>2019-11-12T08:50:22.000Z</published>
-    <updated>2019-11-12T08:50:22.913Z</updated>
+    <updated>2019-11-12T11:54:09.370Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;##覆写&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;public class Father {
+    public static
+        
+      
+    
     </summary>
     
+      <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="覆写 重载" scheme="https://goodboysuyan.ltd/tags/%E8%A6%86%E5%86%99-%E9%87%8D%E8%BD%BD/"/>
     
   </entry>
   
@@ -35,7 +52,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/10/string-lei/"/>
     <id>https://goodboysuyan.ltd/2019/11/10/string-lei/</id>
     <published>2019-11-10T10:36:52.000Z</published>
-    <updated>2019-11-12T08:44:44.513Z</updated>
+    <updated>2019-11-12T11:02:58.815Z</updated>
     
     <summary type="html">
     
@@ -53,7 +70,7 @@
       <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="String类简介" scheme="https://goodboysuyan.ltd/tags/String%E7%B1%BB%E7%AE%80%E4%BB%8B/"/>
+      <category term="String类" scheme="https://goodboysuyan.ltd/tags/String%E7%B1%BB/"/>
     
   </entry>
   

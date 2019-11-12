@@ -8,7 +8,13 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="覆写与重载 | 苏彦的博客">
+    <meta name="description" content="##覆写
+
+如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。
+
+public class Father {
+    public static void main(String[] args) {
+       ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -406,11 +412,24 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/覆写-重载/" target="_blank">
+                            <span class="chip bg-color">覆写 重载</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Java基础/" class="post-category" target="_blank">
+                            Java基础
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -432,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    215
                 </div>
                 
 
@@ -455,7 +474,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>##覆写</p>
+<blockquote>
+<p>如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。</p>
+</blockquote>
+<pre><code>public class Father {
+    public static void main(String[] args) {
+        Father father = new Son();
+        father.good();
+    }
+    protected void good() {
+        System.out.println(&quot;叫爸爸&quot;);
+    }
+}</code></pre><pre><code>public class Son extends Father {
+    @Override
+    public void good() {
+        System.out.println(&quot;祖安&quot;);
+    }
+}</code></pre><h2 id="覆写总结"><a href="#覆写总结" class="headerlink" title="覆写总结"></a>覆写总结</h2><blockquote>
+<p><strong>一大两小两同</strong></p>
+<ul>
+<li><strong>一大</strong>：子类的方法访问权限控制符只能相同或变大。</li>
+<li><strong>两小</strong>：子类抛出异常和方法返回值只能变小（或相同），都能够转型成父类对象。子类的返回值、抛出异常，与父类存在继承关系。</li>
+<li><strong>两同</strong>：方法名和参数必须完全相同。</li>
+</ul>
+</blockquote>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><blockquote>
+<p>在同一个类中，如果多个方法有相同的名字，不同的参数（参数个数、顺序、类型不同），即称为重载。</p>
+</blockquote>
+
             </div>
             <hr />
 
@@ -956,7 +1003,13 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            ##覆写
+
+如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。
+
+public class Father {
+    public static void main(String[] args) {
+       
                         
                     </div>
                     <div class="publish-info">
@@ -965,10 +1018,25 @@
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java基础/" class="post-category" target="_blank">
+                                    Java基础
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/覆写-重载/" target="_blank">
+                        <span class="chip bg-color">覆写 重载</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1017,8 +1085,8 @@ String为什么不可变public final class String
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/String类简介/" target="_blank">
-                        <span class="chip bg-color">String类简介</span>
+                    <a href="/tags/String类/" target="_blank">
+                        <span class="chip bg-color">String类</span>
                     </a>
                     
                 </div>
@@ -1180,7 +1248,7 @@ String为什么不可变public final class String
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">2.9k</span>
+            <span class="white-color">3.1k</span>
             
 
             <br>
