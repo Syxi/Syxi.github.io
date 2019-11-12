@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>覆写与重载</title>
+      <link href="/2019/11/12/fu-xie-yu-chong-zai/"/>
+      <url>/2019/11/12/fu-xie-yu-chong-zai/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>String类</title>
+      <link href="/2019/11/10/string-lei/"/>
+      <url>/2019/11/10/string-lei/</url>
+      
+        <content type="html"><![CDATA[<h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><blockquote><p>字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。</p></blockquote><h2 id="String为什么不可变"><a href="#String为什么不可变" class="headerlink" title="String为什么不可变"></a>String为什么不可变</h2><pre><code>public final class String    implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence {    // String本质是一个char数组，1.9后变成byte数组,节省内存空间的开辟    private final char value[];}</code></pre><blockquote><p> 首先String类是用final关键字修饰，这说明String不可继承。再看下面，String类的主力成员字段value是个char[ ]数组，而且是用final修饰的。final修饰的字段创建以后就不可改变。 </p></blockquote><blockquote><p> 有的人以为故事就这样完了，其实没有。因为虽然value是不可变，也只是value这个引用地址不可变。挡不住Array数组是可变的事实 。 也就是说Array变量只是stack上的一个引用，数组的本体结构在heap堆。String类里的value用final修饰，只是说stack里的这个叫value的引用地址不可变。没有说堆里array本身数据不可变。 </p></blockquote><h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2><blockquote><p>我们声明的字符串会放到一个叫做字符串常量池的地方，这样可以减少内存在使用，字符串常量池是堆的一部分。<strong>使用字符串常量池</strong>。<strong>每当我们创建字符串常量时，JVM会首先检查字符串常量池，如果该字符串已经存在常量池中，那么就直接返回常量池中的实例引用。如果字符串不存在常量池中，就会实例化该字符串并且将其放到常量池中。由于String字符串的不可变性我们可以十分肯定常量池中一定不存在两个相同的字符串</strong></p></blockquote><pre><code>public class StringTest {    public static void main(String[] args) {        // Java 程序中的所有字符串字面值（如&quot;suyan&quot;）都作为String的对象。        String s1 = &quot;suYan&quot;;        String s2 = &quot;suYan&quot;;        // 不建议这种写法，浪费堆内存        String s3 = new String(&quot;suYan&quot;);        String s4 = new String(&quot;allRight&quot;);        System.out.println(s1 == s2);        System.out.println(s1 == s3);        // String类重写了equals()方法，比较的是两个对象的内容        System.out.println(s1.equals(s3));    }}</code></pre><pre><code>truefalsetrueProcess finished with exit code 0</code></pre><h2 id="String类常用方法"><a href="#String类常用方法" class="headerlink" title="String类常用方法"></a>String类常用方法</h2><pre><code>public class StringTest {    public static void main(String[] args) {        String s = &quot;suYan&quot;;        // char charAt(int index); 获取index位置的字符        System.out.println(s.charAt(3));        // boolean contains(CharSequence s); 判断字符串是否包含某个字符串        System.out.println(s.contains(&quot;suY&quot;));        // boolean endsWith(String endStr); 判断是否是已某个字符串结尾        System.out.println(s.endsWith(&quot;an&quot;));        // boolean equalsIgnoreCase(String anotherString); 忽略大小写比较两个字符串是否相等        System.out.println(s.equalsIgnoreCase(&quot;sUYAn&quot;));        // byte getBytes(); 转换成byte数组        String s1 = &quot;goodBoy&quot;;        byte [] array1 = s1.getBytes();        for (int i=0; i &lt; array1.length;i++) {            System.out.println(array1[i] + &quot; &quot;);        }        // int indexOf(); 取指定字符在字符串中的位置        System.out.println(s1.indexOf(&quot;B&quot;));        // int indexOf(String str, int fromIndexOf);从指定的下标开始取得指定字符在字符串的位置        System.out.println(s1.indexOf(&quot;y&quot;,1));        // int lastIndexOf(String str); 从后面开始取得指定字符在字符串最后出现的位置        System.out.println(s1.lastIndexOf(&quot;o&quot;));        // int lastIndexOf(String str, int fromIndex); 从后面指定的下标开始取得指定字符在字符串最后出现的位置        System.out.println(s1.lastIndexOf(&quot;d&quot;,5));        // int length()获取字符串的长度        System.out.println(s1.length());        String s2 = &quot;hello&quot;;        // String replaceALL(String str1 String str2); str2替换字符串中str1的内容        System.out.println(s2.replaceAll(&quot;llo&quot;,&quot;www&quot;));        // String[] split(String s); 根据指定的表达式拆分字符串        String s3 = &quot;a,b,c,d&quot;;        String[] array2 = s3.split(&quot;,&quot;);        for (int i=0; i &lt; array2.length;i++) {            System.out.println(array2[i] + &quot; &quot;);        }        // boolean startsWith(String s); 判断是否以某个字符串开始        System.out.println(s2.startsWith(&quot;he&quot;));        // String substring(int begin); 根据传入的索引位置截取字符串        System.out.println(s2.substring(2));        // String substring(int beginIndex, int endIndex); 根据传入的起始和结束位置截字符串        System.out.println(s2.substring(0,3));        // char[] toCharArray(); 将字符串转换为char数组        String s5 = &quot;eclipse&quot;;        char[] array3 = s5.toCharArray();        for (int i=0; i &lt; array3.length;i++) {            System.out.println(array3[i] + &quot; &quot;);        }        // void toUpperCase();转换成大写        System.out.println(s2.toUpperCase());        // void toLowerCase(); 转换成小写        System.out.println(s2.toLowerCase());        // String trim(); 去除首尾空格        String s4 = &quot; may &quot;;        System.out.println(s4.trim());        // String valueOf(Object ob); 将其他类型转换为字符串类型        Object ob = new Object();        ob = null;        // System.out.println(ob.toString()); 报空指针异常        System.out.println(String.valueOf(ob));    }}</code></pre><pre><code>代码运行结果：atruetruetrue103 111 111 100 66 111 121 46537hewwwa b c d truellohele c l i p s e HELLOhellomaynullProcess finished with exit code 0</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> String类简介 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>多态</title>
       <link href="/2019/11/09/duo-tai/"/>
       <url>/2019/11/09/duo-tai/</url>
@@ -36,6 +74,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java泛型 </tag>
+            
+        </tags>
       
     </entry>
     

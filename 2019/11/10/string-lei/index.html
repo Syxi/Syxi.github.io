@@ -4,18 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="类, 师大">
+    <meta name="keywords" content="String类, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.类
-定义：类是一组相关的属性和行为的集合，类一般都是泛指某一种事物。
-实例对象：对象就是该事物的具体表现。
+    <meta name="description" content="String类
+字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。
 
-2.内部类
-定义：在一个类的内部定义另外一个类。
-特点：内部类可以直接访问外部类的成员，包括private修饰的变量和方法。
-">
+String为什么不可变public final class String
+    imple">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>类 | 苏彦的博客</title>
+    <title>String类 | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -297,13 +294,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        类
+                        String类
                     </div>
                 </div>
             </div>
@@ -414,8 +411,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/类/" target="_blank">
-                            <span class="chip bg-color">类</span>
+                        <a href="/tags/String类简介/" target="_blank">
+                            <span class="chip bg-color">String类简介</span>
                         </a>
                         
                     </div>
@@ -438,7 +435,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-08
+                    2019-11-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -452,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    115
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
                 
@@ -475,21 +472,142 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-类"><a href="#1-类" class="headerlink" title="1.类"></a>1.类</h2><blockquote>
-<p>定义：类是一组相关的属性和行为的集合，类一般都是泛指某一种事物。</p>
-<p>实例对象：对象就是该事物的具体表现。</p>
+                <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><blockquote>
+<p>字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。</p>
 </blockquote>
-<h2 id="2-内部类"><a href="#2-内部类" class="headerlink" title="2.内部类"></a>2.内部类</h2><blockquote>
-<p>定义：在一个类的内部定义另外一个类。</p>
-<p>特点：内部类可以直接访问外部类的成员，包括private修饰的变量和方法。</p>
+<h2 id="String为什么不可变"><a href="#String为什么不可变" class="headerlink" title="String为什么不可变"></a>String为什么不可变</h2><pre><code>public final class String
+    implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence {
+    // String本质是一个char数组，1.9后变成byte数组,节省内存空间的开辟
+    private final char value[];
+}</code></pre><blockquote>
+<p> 首先String类是用final关键字修饰，这说明String不可继承。再看下面，String类的主力成员字段value是个char[ ]数组，而且是用final修饰的。final修饰的字段创建以后就不可改变。 </p>
 </blockquote>
-<ul>
-<li>静态内部类</li>
-<li>匿名内部类</li>
-<li>成员内部类</li>
-<li>局部内部类</li>
-</ul>
+<blockquote>
+<p> 有的人以为故事就这样完了，其实没有。因为虽然value是不可变，也只是value这个引用地址不可变。挡不住Array数组是可变的事实 。 也就是说Array变量只是stack上的一个引用，数组的本体结构在heap堆。String类里的value用final修饰，只是说stack里的这个叫value的引用地址不可变。没有说堆里array本身数据不可变。 </p>
+</blockquote>
+<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2><blockquote>
+<p>我们声明的字符串会放到一个叫做字符串常量池的地方，这样可以减少内存在使用，字符串常量池是堆的一部分。<strong>使用字符串常量池</strong>。<strong>每当我们创建字符串常量时，JVM会首先检查字符串常量池，如果该字符串已经存在常量池中，那么就直接返回常量池中的实例引用。如果字符串不存在常量池中，就会实例化该字符串并且将其放到常量池中。由于String字符串的不可变性我们可以十分肯定常量池中一定不存在两个相同的字符串</strong></p>
+</blockquote>
+<pre><code>public class StringTest {
+    public static void main(String[] args) {
+        // Java 程序中的所有字符串字面值（如&quot;suyan&quot;）都作为String的对象。
+        String s1 = &quot;suYan&quot;;
 
+        String s2 = &quot;suYan&quot;;
+
+        // 不建议这种写法，浪费堆内存
+        String s3 = new String(&quot;suYan&quot;);
+
+        String s4 = new String(&quot;allRight&quot;);
+
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        // String类重写了equals()方法，比较的是两个对象的内容
+        System.out.println(s1.equals(s3));
+    }
+}</code></pre><pre><code>true
+false
+true
+Process finished with exit code 0</code></pre><h2 id="String类常用方法"><a href="#String类常用方法" class="headerlink" title="String类常用方法"></a>String类常用方法</h2><pre><code>public class StringTest {
+    public static void main(String[] args) {
+
+        String s = &quot;suYan&quot;;
+
+        // char charAt(int index); 获取index位置的字符
+        System.out.println(s.charAt(3));
+        // boolean contains(CharSequence s); 判断字符串是否包含某个字符串
+        System.out.println(s.contains(&quot;suY&quot;));
+        // boolean endsWith(String endStr); 判断是否是已某个字符串结尾
+        System.out.println(s.endsWith(&quot;an&quot;));
+        // boolean equalsIgnoreCase(String anotherString); 忽略大小写比较两个字符串是否相等
+        System.out.println(s.equalsIgnoreCase(&quot;sUYAn&quot;));
+        // byte getBytes(); 转换成byte数组
+        String s1 = &quot;goodBoy&quot;;
+        byte [] array1 = s1.getBytes();
+        for (int i=0; i &lt; array1.length;i++) {
+            System.out.println(array1[i] + &quot; &quot;);
+        }
+        // int indexOf(); 取指定字符在字符串中的位置
+        System.out.println(s1.indexOf(&quot;B&quot;));
+        // int indexOf(String str, int fromIndexOf);从指定的下标开始取得指定字符在字符串的位置
+        System.out.println(s1.indexOf(&quot;y&quot;,1));
+        // int lastIndexOf(String str); 从后面开始取得指定字符在字符串最后出现的位置
+        System.out.println(s1.lastIndexOf(&quot;o&quot;));
+        // int lastIndexOf(String str, int fromIndex); 从后面指定的下标开始取得指定字符在字符串最后出现的位置
+        System.out.println(s1.lastIndexOf(&quot;d&quot;,5));
+        // int length()获取字符串的长度
+        System.out.println(s1.length());
+        String s2 = &quot;hello&quot;;
+        // String replaceALL(String str1 String str2); str2替换字符串中str1的内容
+        System.out.println(s2.replaceAll(&quot;llo&quot;,&quot;www&quot;));
+        // String[] split(String s); 根据指定的表达式拆分字符串
+        String s3 = &quot;a,b,c,d&quot;;
+        String[] array2 = s3.split(&quot;,&quot;);
+        for (int i=0; i &lt; array2.length;i++) {
+            System.out.println(array2[i] + &quot; &quot;);
+        }
+        // boolean startsWith(String s); 判断是否以某个字符串开始
+        System.out.println(s2.startsWith(&quot;he&quot;));
+        // String substring(int begin); 根据传入的索引位置截取字符串
+        System.out.println(s2.substring(2));
+        // String substring(int beginIndex, int endIndex); 根据传入的起始和结束位置截字符串
+        System.out.println(s2.substring(0,3));
+        // char[] toCharArray(); 将字符串转换为char数组
+        String s5 = &quot;eclipse&quot;;
+        char[] array3 = s5.toCharArray();
+        for (int i=0; i &lt; array3.length;i++) {
+            System.out.println(array3[i] + &quot; &quot;);
+        }
+        // void toUpperCase();转换成大写
+        System.out.println(s2.toUpperCase());
+        // void toLowerCase(); 转换成小写
+        System.out.println(s2.toLowerCase());
+        // String trim(); 去除首尾空格
+        String s4 = &quot; may &quot;;
+        System.out.println(s4.trim());
+        // String valueOf(Object ob); 将其他类型转换为字符串类型
+        Object ob = new Object();
+        ob = null;
+        // System.out.println(ob.toString()); 报空指针异常
+        System.out.println(String.valueOf(ob));
+    }
+}</code></pre><pre><code>代码运行结果：
+a
+true
+true
+true
+103 
+111 
+111 
+100 
+66 
+111 
+121 
+4
+6
+5
+3
+7
+hewww
+a 
+b 
+c 
+d 
+true
+llo
+hel
+e 
+c 
+l 
+i 
+p 
+s 
+e 
+HELLO
+hello
+may
+null
+Process finished with exit code 0</code></pre>
             </div>
             <hr />
 
@@ -647,9 +765,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《类》
+                    《String类》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/08/lei/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/10/string-lei/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -690,7 +808,7 @@
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/08/lei/',
+        id: '2019/11/10/string-lei/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -977,13 +1095,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/09/fan-xing/">
+                <a href="/2019/11/12/fu-xie-yu-chong-zai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="泛型">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="覆写与重载">
                         
-                        <span class="card-title">泛型</span>
+                        <span class="card-title">覆写与重载</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -994,27 +1112,12 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-09
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java泛型/" target="_blank">
-                        <span class="chip bg-color">Java泛型</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1026,38 +1129,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/08/java-yi-qie-jie-dui-xiang/">
+                <a href="/2019/11/09/duo-tai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java一切皆对象">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="多态">
                         
-                        <span class="card-title">Java一切皆对象</span>
+                        <span class="card-title">多态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.面向对象编程思想
-把所有的有形或无形的事物都看作对象，并给对象赋予相应的属性和行为，建立对象之间的联系，使程序更加立体、形象地解决编程领域的问题。
-
-2.类的关系
-
-
-类的关系
-描述
-具体实现
-
-
-
-继承
-父类与子类的关系
-extend
+                            1.什么是多态
+多态是同一行为具有不同表现形式或形态的能力。即对象多种表现形式的体现，就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时的不确定，而是在程序运行期间确定，即一个引用变量到底会指向哪个类的实例对象
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-09
                             </span>
                         <span class="publish-author">
                             
@@ -1074,8 +1164,8 @@ extend
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/面向对象编程/" target="_blank">
-                        <span class="chip bg-color">面向对象编程</span>
+                    <a href="/tags/Java多态/" target="_blank">
+                        <span class="chip bg-color">Java多态</span>
                     </a>
                     
                 </div>

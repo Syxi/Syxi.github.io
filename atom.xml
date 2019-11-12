@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-09T14:21:39.942Z</updated>
+  <updated>2019-11-12T08:50:22.913Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>覆写与重载</title>
+    <link href="https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/"/>
+    <id>https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/</id>
+    <published>2019-11-12T08:50:22.000Z</published>
+    <updated>2019-11-12T08:50:22.913Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>String类</title>
+    <link href="https://goodboysuyan.ltd/2019/11/10/string-lei/"/>
+    <id>https://goodboysuyan.ltd/2019/11/10/string-lei/</id>
+    <published>2019-11-10T10:36:52.000Z</published>
+    <updated>2019-11-12T08:44:44.513Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;String类&quot;&gt;&lt;a href=&quot;#String类&quot; class=&quot;headerlink&quot; title=&quot;String类&quot;&gt;&lt;/a&gt;String类&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;字符串广泛应用 在 Java 编程中，在 Java
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="String类简介" scheme="https://goodboysuyan.ltd/tags/String%E7%B1%BB%E7%AE%80%E4%BB%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>多态</title>
@@ -47,12 +88,16 @@
     <link href="https://goodboysuyan.ltd/2019/11/09/fan-xing/"/>
     <id>https://goodboysuyan.ltd/2019/11/09/fan-xing/</id>
     <published>2019-11-09T06:33:17.000Z</published>
-    <updated>2019-11-09T06:33:17.915Z</updated>
+    <updated>2019-11-09T15:38:52.721Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java泛型" scheme="https://goodboysuyan.ltd/tags/Java%E6%B3%9B%E5%9E%8B/"/>
     
   </entry>
   
