@@ -531,7 +531,9 @@ default void remove() {
     int nextIndex();
     // 返回列表中ListIterator所需位置前面元素的索引
     int previousIndex();
-    // 从列表中删除next()或previous()返回的最后一个元素（有点拗口，意思就是对迭代器使用hasNext()方法时，删除ListIterator指向位置后面的元素；当对迭代器使用hasPrevious()方法时，删除ListIterator指向位置前面的元素）
+    /* 从列表中删除next()或previous()返回的最后一个元素（有点拗口，
+    意思就是对迭代器使用hasNext()方法时，删除ListIterator指向位置后面的元素；
+    当对迭代器使用hasPrevious()方法时，删除ListIterator指向位置前面的元素）*/
     void remove();
     // 从列表中将next()或previous()返回的最后一个元素返回的最后一个元素更改为指定元素e
     void set(E e);
