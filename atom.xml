@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-12T16:15:24.110Z</updated>
+  <updated>2019-11-14T12:52:40.315Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>equals方法</title>
-    <link href="https://goodboysuyan.ltd/2019/11/12/equals-fang-fa/"/>
-    <id>https://goodboysuyan.ltd/2019/11/12/equals-fang-fa/</id>
-    <published>2019-11-12T15:20:04.000Z</published>
-    <updated>2019-11-12T16:15:24.110Z</updated>
+    <title>Java中的迭代器</title>
+    <link href="https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/"/>
+    <id>https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/</id>
+    <published>2019-11-13T15:06:39.000Z</published>
+    <updated>2019-11-14T12:52:40.315Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,35 @@
       
         
         
-          &lt;h3 id=&quot;Object类之equals方法&quot;&gt;&lt;a href=&quot;#Object类之equals方法&quot; class=&quot;headerlink&quot; title=&quot;Object类之equals方法&quot;&gt;&lt;/a&gt;Object类之equals方法&lt;/h3&gt;&lt;p&gt;
+          &lt;p&gt;##1.Iterator&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;  迭代器是一种模式、详细可见其设计模式，可以使得序列类型的数据结构的遍历行为与被遍历的对象分离，即我们无需关心该序列的底层结构是什么样子的。只要拿到这个对象,使用迭代器就可以遍历这个对象的内部。 
+        
+      
+    
+    </summary>
+    
+      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
+    
+    
+      <category term="Iterator和ListIterator" scheme="https://goodboysuyan.ltd/tags/Iterator%E5%92%8CListIterator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>equals方法</title>
+    <link href="https://goodboysuyan.ltd/2019/11/12/equals-fang-fa/"/>
+    <id>https://goodboysuyan.ltd/2019/11/12/equals-fang-fa/</id>
+    <published>2019-11-12T15:20:04.000Z</published>
+    <updated>2019-11-13T14:27:01.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-Object类之equals方法&quot;&gt;&lt;a href=&quot;#1-Object类之equals方法&quot; class=&quot;headerlink&quot; title=&quot;1.Object类之equals方法&quot;&gt;&lt;/a&gt;1.Object类之equals方法&lt;/h3&gt;&lt;p&gt;
         
       
     
@@ -47,7 +75,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/12/object-lei/"/>
     <id>https://goodboysuyan.ltd/2019/11/12/object-lei/</id>
     <published>2019-11-12T14:15:59.000Z</published>
-    <updated>2019-11-12T15:54:37.804Z</updated>
+    <updated>2019-11-13T14:27:22.173Z</updated>
     
     <summary type="html">
     
@@ -55,7 +83,7 @@
       
         
         
-          &lt;h2 id=&quot;Object类&quot;&gt;&lt;a href=&quot;#Object类&quot; class=&quot;headerlink&quot; title=&quot;Object类&quot;&gt;&lt;/a&gt;Object类&lt;/h2&gt;&lt;blockquote&gt;
+          &lt;h2 id=&quot;1-Object类&quot;&gt;&lt;a href=&quot;#1-Object类&quot; class=&quot;headerlink&quot; title=&quot;1.Object类&quot;&gt;&lt;/a&gt;1.Object类&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;
         
       
@@ -74,7 +102,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/"/>
     <id>https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/</id>
     <published>2019-11-12T08:50:22.000Z</published>
-    <updated>2019-11-12T11:54:09.370Z</updated>
+    <updated>2019-11-13T14:28:27.393Z</updated>
     
     <summary type="html">
     
@@ -82,7 +110,7 @@
       
         
         
-          &lt;p&gt;##覆写&lt;/p&gt;
+          &lt;p&gt;##1.覆写&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -105,7 +133,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/10/string-lei/"/>
     <id>https://goodboysuyan.ltd/2019/11/10/string-lei/</id>
     <published>2019-11-10T10:36:52.000Z</published>
-    <updated>2019-11-12T11:02:58.815Z</updated>
+    <updated>2019-11-13T14:27:48.720Z</updated>
     
     <summary type="html">
     
@@ -113,7 +141,7 @@
       
         
         
-          &lt;h2 id=&quot;String类&quot;&gt;&lt;a href=&quot;#String类&quot; class=&quot;headerlink&quot; title=&quot;String类&quot;&gt;&lt;/a&gt;String类&lt;/h2&gt;&lt;blockquote&gt;
+          &lt;h2 id=&quot;1-String类&quot;&gt;&lt;a href=&quot;#1-String类&quot; class=&quot;headerlink&quot; title=&quot;1.String类&quot;&gt;&lt;/a&gt;1.String类&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;字符串广泛应用 在 Java 编程中，在 Java
         
       
@@ -158,13 +186,13 @@
     <link href="https://goodboysuyan.ltd/2019/11/09/fan-xing/"/>
     <id>https://goodboysuyan.ltd/2019/11/09/fan-xing/</id>
     <published>2019-11-09T06:33:17.000Z</published>
-    <updated>2019-11-12T14:16:11.021Z</updated>
+    <updated>2019-11-13T14:26:16.464Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
+      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
     
     
       <category term="Java泛型" scheme="https://goodboysuyan.ltd/tags/Java%E6%B3%9B%E5%9E%8B/"/>
