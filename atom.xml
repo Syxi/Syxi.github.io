@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-14T12:52:40.315Z</updated>
+  <updated>2019-11-14T12:59:10.255Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/"/>
     <id>https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/</id>
     <published>2019-11-13T15:06:39.000Z</published>
-    <updated>2019-11-14T12:52:40.315Z</updated>
+    <updated>2019-11-14T12:59:10.255Z</updated>
     
     <summary type="html">
     
@@ -29,9 +29,8 @@
       
         
         
-          &lt;p&gt;##1.Iterator&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;  迭代器是一种模式、详细可见其设计模式，可以使得序列类型的数据结构的遍历行为与被遍历的对象分离，即我们无需关心该序列的底层结构是什么样子的。只要拿到这个对象,使用迭代器就可以遍历这个对象的内部。 
+          &lt;h2 id=&quot;1-Iterator&quot;&gt;&lt;a href=&quot;#1-Iterator&quot; class=&quot;headerlink&quot; title=&quot;1.Iterator&quot;&gt;&lt;/a&gt;1.Iterator&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt; 
         
       
     
@@ -102,7 +101,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/"/>
     <id>https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/</id>
     <published>2019-11-12T08:50:22.000Z</published>
-    <updated>2019-11-13T14:28:27.393Z</updated>
+    <updated>2019-11-14T12:59:35.474Z</updated>
     
     <summary type="html">
     
@@ -110,12 +109,7 @@
       
         
         
-          &lt;p&gt;##1.覆写&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;public class Father {
-    public static
+          &lt;h2 id=&quot;1-覆写&quot;&gt;&lt;a href=&quot;#1-覆写&quot; class=&quot;headerlink&quot;
         
       
     
@@ -186,7 +180,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/09/fan-xing/"/>
     <id>https://goodboysuyan.ltd/2019/11/09/fan-xing/</id>
     <published>2019-11-09T06:33:17.000Z</published>
-    <updated>2019-11-13T14:26:16.464Z</updated>
+    <updated>2019-11-14T12:58:48.434Z</updated>
     
     <summary type="html">
     
@@ -195,7 +189,7 @@
       <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
     
     
-      <category term="Java泛型" scheme="https://goodboysuyan.ltd/tags/Java%E6%B3%9B%E5%9E%8B/"/>
+      <category term="泛型" scheme="https://goodboysuyan.ltd/tags/%E6%B3%9B%E5%9E%8B/"/>
     
   </entry>
   
