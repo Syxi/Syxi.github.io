@@ -8,7 +8,8 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="泛型 | 苏彦的博客">
+    <meta name="description" content="1.泛型
+泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -290,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -445,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    820
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -468,7 +469,81 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="1-泛型"><a href="#1-泛型" class="headerlink" title="1.泛型"></a>1.泛型</h2><blockquote>
+<p>泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。泛型的本质是为了参数化类型（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型。</p>
+<p>泛型就是类型不确定，在使用的时候确定类型。</p>
+</blockquote>
+<blockquote>
+<p> 泛型其实就是在定义类、接口、方法的时候不局限地指定某一种特定类型，而让类、接口、方法的调用者来决定具体使用哪一种类型的参数。 </p>
+<p>T 代表 the Type of object，表示某个类。</p>
+<p>E 代表 Element，用于表示集合中的元素。</p>
+<p>K 表示 Key，V 表示 Value，用于键值对元素。</p>
+</blockquote>
+<h2 id="2-泛型类、接口"><a href="#2-泛型类、接口" class="headerlink" title="2.泛型类、接口"></a>2.泛型类、接口</h2><blockquote>
+<p> <strong>泛型类，是在实例化类的时候指明泛型的具体类型</strong></p>
+</blockquote>
+<pre><code>public class Value&lt;T&gt; implements Generator&lt;T&gt; {
+    private T key;
+
+    public Value(T key) {
+        this.key = key;
+    }
+    // 注意，这不是泛型方法
+    public T getKey() {
+        return key;
+    }
+
+    public void setKey(T key) {
+        this.key = key;
+    }
+
+    public static void main(String[] args) {
+        Value&lt;String&gt; v1 = new Value&lt;&gt;(&quot;we&quot;);
+        Value&lt;Integer&gt; v2 = new Value&lt;&gt;(199);
+        Value&lt;Character&gt; v3 = new Value&lt;&gt;(&#39;i&#39;);
+        System.out.println(v1.getKey() + &quot; &quot; + v2.getKey() + &quot; &quot; + v3.getKey());
+    }
+}
+
+we 199 i
+</code></pre><h2 id="3-泛型方法"><a href="#3-泛型方法" class="headerlink" title="3.泛型方法"></a>3.泛型方法</h2><blockquote>
+<p>泛型方法可以定义在泛型类中，也可以定义在非泛型的普通类中。即泛型方法不依赖于泛型类的存在而存在，可以自己定义和使用。<strong>有一个原创：能使用泛型方法完成的功能，就不要使用泛型类</strong>。 为什么要使用泛型方法呢？因为泛型类要在实例化的时候就指明类型，如果想换一种类型，不得不重新new一次，可能不够灵活；而泛型方法可以在调用的时候指明类型，更加灵活。 </p>
+<p><strong>泛型方法，是在调用方法的时候指明泛型的具体类型 。</strong></p>
+</blockquote>
+<pre><code>public class Value{
+
+    // 这是一个泛型方法 &lt;T&gt;是定义泛型方法，T是方法返回值
+    public &lt;T&gt; T showValue1(T t) {
+        System.out.println(&quot;这是泛型方法&quot; + &quot; &quot; + t);
+        return t;
+    }
+
+    // 静态方法需要定义成泛型方法，在类中要特定的声明，
+    // 即泛型类的数据类型形参是T，静态方法不可以同样声明T。
+    public static &lt;S&gt; void showValue2(S s) {
+        System.out.println(&quot;这是静态泛型方法&quot; + &quot; &quot; + s);
+    }
+
+    public static void main(String[] args) {
+        Value v1 = new Value();
+        v1.showValue1(520);
+        Value.showValue2(&quot;小幸运&quot;);
+    }
+}
+
+结果：
+这是泛型方法 520
+这是静态泛型方法 小幸运</code></pre><h2 id="3-泛型通配符"><a href="#3-泛型通配符" class="headerlink" title="3.泛型通配符"></a>3.泛型通配符</h2><ul>
+<li>&lt;? extends T&gt;：是指 <strong>“上界通配符（Upper Bounds Wildcards）”</strong></li>
+<li>&lt;? super T&gt;：是指 <strong>“下界通配符（Lower Bounds Wildcards）”</strong></li>
+</ul>
+<blockquote>
+<ol>
+<li><strong>频繁往外读取内容的，适合用上界Extends。</strong></li>
+<li><strong>经常往里插入的，适合用下界Super。</strong></li>
+</ol>
+</blockquote>
+
             </div>
             <hr />
 
@@ -960,7 +1035,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="多态">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="多态">
                         
                         <span class="card-title">多态</span>
                     </div>
@@ -1010,7 +1085,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="类">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="类">
                         
                         <span class="card-title">类</span>
                     </div>
@@ -1210,7 +1285,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">4.9k</span>
+            <span class="white-color">5.7k</span>
             
 
             <br>
