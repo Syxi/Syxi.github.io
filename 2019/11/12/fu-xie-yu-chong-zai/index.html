@@ -295,7 +295,7 @@ public class Father {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,7 +450,7 @@ public class Father {
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    218
+                    214
                 </div>
                 
 
@@ -476,20 +476,22 @@ public class Father {
                 <h2 id="1-覆写"><a href="#1-覆写" class="headerlink" title="1.覆写"></a>1.覆写</h2><blockquote>
 <p>如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。</p>
 </blockquote>
-<pre><code>public class Father {
-    public static void main(String[] args) {
-        Father father = new Son();
-        father.good();
-    }
-    protected void good() {
-        System.out.println(&quot;叫爸爸&quot;);
-    }
-}</code></pre><pre><code>public class Son extends Father {
-    @Override
-    public void good() {
-        System.out.println(&quot;祖安&quot;);
-    }
-}</code></pre><h2 id="2-覆写总结"><a href="#2-覆写总结" class="headerlink" title="2.覆写总结"></a>2.覆写总结</h2><blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Father father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        father<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"叫爸爸"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"祖安"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-覆写总结"><a href="#2-覆写总结" class="headerlink" title="2.覆写总结"></a>2.覆写总结</h2><blockquote>
 <p><strong>一大两小两同</strong></p>
 <ul>
 <li><strong>一大</strong>：子类的方法访问权限控制符只能相同或变大。</li>
@@ -992,7 +994,7 @@ public class Father {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Object类">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Object类">
                         
                         <span class="card-title">Object类</span>
                     </div>
@@ -1044,7 +1046,7 @@ public class Father {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="String类">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="String类">
                         
                         <span class="card-title">String类</span>
                     </div>
@@ -1241,7 +1243,7 @@ public class Father {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">7.7k</span>
             
 
             <br>

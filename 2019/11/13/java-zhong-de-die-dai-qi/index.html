@@ -294,7 +294,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -449,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    949
+                    929
                 </div>
                 
 
@@ -518,65 +518,67 @@ default void remove() {
 </ul>
 </blockquote>
 <h2 id="6-ListIterator"><a href="#6-ListIterator" class="headerlink" title="6.ListIterator"></a>6.ListIterator</h2><p> ListIterator是一个功能更加强大的, 它继承于Iterator接口,只能用于各种List类型的访问。 </p>
-<pre><code>public interface ListIterator&lt;E&gt; extends Iterator&lt;E&gt; {
-    // 以正向遍历列表时，如果列表迭代器后面还有元素，则返回 true，否则返回false
-    boolean hasNext();
-    // 返回列表中ListIterator指向位置后面的元素
-    next();
-    // 如果以逆向遍历列表，列表迭代器前面还有元素，则返回 true，否则返回false
-    boolean hasPrevious();
-    // 返回列表中ListIterator指向位置前面的元素
-    previous();
-    // 返回列表中ListIterator所需位置后面元素的索引
-    int nextIndex();
-    // 返回列表中ListIterator所需位置前面元素的索引
-    int previousIndex();
-    /* 从列表中删除next()或previous()返回的最后一个元素（有点拗口，
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ListIterator</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Iterator</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 以正向遍历列表时，如果列表迭代器后面还有元素，则返回 true，否则返回false</span>
+    <span class="token keyword">boolean</span> <span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 返回列表中ListIterator指向位置后面的元素</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 如果以逆向遍历列表，列表迭代器前面还有元素，则返回 true，否则返回false</span>
+    <span class="token keyword">boolean</span> <span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 返回列表中ListIterator指向位置前面的元素</span>
+    <span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 返回列表中ListIterator所需位置后面元素的索引</span>
+    <span class="token keyword">int</span> <span class="token function">nextIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 返回列表中ListIterator所需位置前面元素的索引</span>
+    <span class="token keyword">int</span> <span class="token function">previousIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 从列表中删除next()或previous()返回的最后一个元素（有点拗口，
     意思就是对迭代器使用hasNext()方法时，删除ListIterator指向位置后面的元素；
-    当对迭代器使用hasPrevious()方法时，删除ListIterator指向位置前面的元素）*/
-    void remove();
-    // 从列表中将next()或previous()返回的最后一个元素返回的最后一个元素更改为指定元素e
-    void set(E e);
-    // 将指定的元素插入列表，插入位置为迭代器当前位置之前
-     void add(E e);
- }</code></pre><h2 id="7-Listiterator代码实例"><a href="#7-Listiterator代码实例" class="headerlink" title="7.Listiterator代码实例"></a>7.Listiterator代码实例</h2><pre><code>public class PersonTest {
-    public static void main(String[] args) {
-        // 创建集合
-        ArrayList&lt;Person&gt; a = new ArrayList&lt;&gt;();
-        // 添加对象
-        a.add(new Person(&quot;苏彦&quot;,20));
-        a.add(new Person(&quot;苏小彦&quot;,21));
-        a.add(new Person(&quot;苏大彦&quot;,22));
-        a.add(new Person(&quot;苏好彦&quot;,23));
-        // 创建迭代器
-        ListIterator li = a.listIterator();
-        System.out.println(&quot;从前往后输出：&quot;);
-        // 单向从前到后遍历
-        while(li.hasNext()) {
-            Person temp1 = (Person)li.next(); // 向下转型
-            System.out.println(temp1.getName() + &quot; &quot; + temp1.getAge());
-        }
+    当对迭代器使用hasPrevious()方法时，删除ListIterator指向位置前面的元素）*/</span>
+    <span class="token keyword">void</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 从列表中将next()或previous()返回的最后一个元素返回的最后一个元素更改为指定元素e</span>
+    <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 将指定的元素插入列表，插入位置为迭代器当前位置之前</span>
+     <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-Listiterator代码实例"><a href="#7-Listiterator代码实例" class="headerlink" title="7.Listiterator代码实例"></a>7.Listiterator代码实例</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建集合</span>
+        ArrayList<span class="token operator">&lt;</span>Person<span class="token operator">></span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加对象</span>
+        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏小彦"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏大彦"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏好彦"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 创建迭代器</span>
+        ListIterator li <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从前往后输出："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 单向从前到后遍历</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Person temp1 <span class="token operator">=</span> <span class="token punctuation">(</span>Person<span class="token punctuation">)</span>li<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 向下转型</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> temp1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        System.out.println(&quot;从后往前输出：&quot;);
-        // 可以双向遍历，但是一定要先进行由前往后输出，之后才能进行由后往前的输出
-        while (li.hasPrevious()) {
-            Person temp2 = (Person) li.previous();
-            System.out.println(temp2.getName() +  &quot; &quot; + temp2.getAge());
-        }
-    }
-}
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从后往前输出："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 可以双向遍历，但是一定要先进行由前往后输出，之后才能进行由后往前的输出</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Person temp2 <span class="token operator">=</span> <span class="token punctuation">(</span>Person<span class="token punctuation">)</span> li<span class="token punctuation">.</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>  <span class="token string">" "</span> <span class="token operator">+</span> temp2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 从前往后输出：
-苏彦 20
-苏小彦 21
-苏大彦 22
-苏好彦 23
+苏彦 <span class="token number">20</span>
+苏小彦 <span class="token number">21</span>
+苏大彦 <span class="token number">22</span>
+苏好彦 <span class="token number">23</span>
 从后往前输出：
-苏好彦 23
-苏大彦 22
-苏小彦 21
-苏彦 20
-</code></pre>
+苏好彦 <span class="token number">23</span>
+苏大彦 <span class="token number">22</span>
+苏小彦 <span class="token number">21</span>
+苏彦 <span class="token number">20</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1068,7 +1070,7 @@ default void remove() {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="ArrayList">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="ArrayList">
                         
                         <span class="card-title">ArrayList</span>
                     </div>
@@ -1076,7 +1078,9 @@ default void remove() {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            1. ArrayList简介概念：ArrayList的底层数据结构是一个其容量能够动态增长的动态数组
+public class ArrayList&lt;E> extends AbstractList&lt;E>
+        imple
                         
                     </div>
                     <div class="publish-info">
@@ -1117,7 +1121,7 @@ default void remove() {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="equals方法">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="equals方法">
                         
                         <span class="card-title">equals方法</span>
                     </div>
@@ -1129,7 +1133,8 @@ default void remove() {
  public boolean equals(Object obj) {
         return (this == obj);
     }
- 
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1314,7 +1319,7 @@ default void remove() {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">7.7k</span>
             
 
             <br>

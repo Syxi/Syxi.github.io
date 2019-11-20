@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -446,7 +446,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    707
                 </div>
                 
 
@@ -481,50 +481,54 @@
 <li>有父类引用指向子类对象</li>
 </ul>
 </blockquote>
-<h2 id="3-代码示例"><a href="#3-代码示例" class="headerlink" title="3.代码示例"></a>3.代码示例</h2><h3 id="3-1父类Animal"><a href="#3-1父类Animal" class="headerlink" title="3.1父类Animal"></a>3.1父类Animal</h3><pre><code>public class Animal {
+<h2 id="3-代码示例"><a href="#3-代码示例" class="headerlink" title="3.代码示例"></a>3.代码示例</h2><h3 id="3-1父类Animal"><a href="#3-1父类Animal" class="headerlink" title="3.1父类Animal"></a>3.1父类Animal</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
 
-    public int age = 10;
+    <span class="token keyword">public</span> <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 
-    public void eat() {
-        System.out.println(&quot;动物父类&quot;);
-    }
-}
-</code></pre><h3 id="3-2子类Cat"><a href="#3-2子类Cat" class="headerlink" title="3.2子类Cat"></a>3.2子类Cat</h3><pre><code>public class Cat extends Animal {
-    public int age = 5;
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"动物父类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2子类Cat"><a href="#3-2子类Cat" class="headerlink" title="3.2子类Cat"></a>3.2子类Cat</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
 
-    @Override
-    public void eat() {
-        System.out.println(&quot;猫吃老鼠&quot;);
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"猫吃老鼠"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // Cat类自己的方法
-    public void sleep() {
-        System.out.println(&quot;猫在睡觉&quot;);
-    }
-}
-</code></pre><h3 id="3-3测试类"><a href="#3-3测试类" class="headerlink" title="3.3测试类"></a>3.3测试类</h3><pre><code>public class AnimalTest {
+    <span class="token comment" spellcheck="true">// Cat类自己的方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"猫在睡觉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3测试类"><a href="#3-3测试类" class="headerlink" title="3.3测试类"></a>3.3测试类</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnimalTest</span> <span class="token punctuation">{</span>
 
-    public static void main(String[] args) {
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        Cat cat = new Cat();
-        cat.eat();
-        System.out.println(&quot;猫的年龄是：&quot; + cat.age);
+        Cat cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cat<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"猫的年龄是："</span> <span class="token operator">+</span> cat<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 父类引用指向子类对象
-        Animal animal = new Cat();
-        animal.eat();
+        <span class="token comment" spellcheck="true">// 父类引用指向子类对象</span>
+        Animal animal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 想执行Cat中的sleep()方法，需要向下强制转型
-        ((Cat) animal).sleep();
+        <span class="token comment" spellcheck="true">// 想执行Cat中的sleep()方法，需要向下强制转型</span>
+        <span class="token punctuation">(</span><span class="token punctuation">(</span>Cat<span class="token punctuation">)</span> animal<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 父类引用访问成员变量
-        System.out.println(&quot;动物的年龄：&quot; + animal.age);
-    }
-}</code></pre><h3 id="3-4测试结果"><a href="#3-4测试结果" class="headerlink" title="###3.4测试结果"></a>###3.4测试结果</h3><pre><code>猫吃老鼠
-猫的年龄是：5
+        <span class="token comment" spellcheck="true">// 父类引用访问成员变量</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"动物的年龄："</span> <span class="token operator">+</span> animal<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-4测试结果"><a href="#3-4测试结果" class="headerlink" title="###3.4测试结果"></a>###3.4测试结果</h3><pre class="line-numbers language-java"><code class="language-java">猫吃老鼠
+猫的年龄是：<span class="token number">5</span>
 猫吃老鼠
 猫在睡觉
-动物的年龄：10</code></pre><h2 id="4-总结分析"><a href="#4-总结分析" class="headerlink" title="4.总结分析"></a>4.总结分析</h2><blockquote>
+动物的年龄：<span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-总结分析"><a href="#4-总结分析" class="headerlink" title="4.总结分析"></a>4.总结分析</h2><blockquote>
 <p><strong>父类引用执行方法调用：</strong> 父类 父类的引用 = (指向) 子类的实例</p>
 <p>当父类的引用要执行方法1的时候，他只会跟他指向的对象说，“嗨，哥们，执行一下你的方法1”然后他就不管了，继续睡大觉去了。然后真实的对象实例就会低头看看写在自己身上的方法1，捏出来执行一把。这个时候如果子类对象重写了方法1，捏出来的就是重写的方法。如果没重写，就会找他爸，从他爸身上去捏方法1出来。这就是所谓的<strong>动态绑定</strong>。</p>
 </blockquote>
@@ -1026,7 +1030,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="String类">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="String类">
                         
                         <span class="card-title">String类</span>
                     </div>
@@ -1079,7 +1083,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="泛型">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="泛型">
                         
                         <span class="card-title">泛型</span>
                     </div>
@@ -1273,7 +1277,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">7.7k</span>
             
 
             <br>

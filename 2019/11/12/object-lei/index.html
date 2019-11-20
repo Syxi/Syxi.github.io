@@ -293,7 +293,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -448,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    452
+                    433
                 </div>
                 
 
@@ -475,47 +475,51 @@
 <p> Object类是所有类的父类,即每个类都直接或间接继承自该类。所以一个Object类型的变量可以引用任何对象,不论是类实例还是数组。  在不明确给出父类的情况下,Java会自动把Object作为要定义类的父类。 </p>
 </blockquote>
 <h2 id="2-toString"><a href="#2-toString" class="headerlink" title="2.toString"></a>2.toString</h2><p>Object中的toString方法</p>
-<pre><code>  public String toString() {
-        return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode());
-    }
-</code></pre><blockquote>
+<pre class="line-numbers language-java"><code class="language-java">  <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"@"</span> <span class="token operator">+</span> Integer<span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
 <p> SUN在Object类中设计toString方法的目的：返回java对象的字符串表示形式。</p>
 <p>  在现实的开发过程中，Object中的toString方法就是要被重写的。 </p>
 <p> Object中的toString方法返回： 类名@java对象的内存地址经过哈希算法得出的int类型值再转换成十六进制.  这个输出结果可以等同看做java对象在堆中的内存地址。 </p>
 </blockquote>
-<pre><code>public class Person {
-    private String name;
-    private int age;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-    // 重写toString()方法
-    @Override
-    public String toString() {
-        return &quot;Person{&quot; +
-                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
-                &quot;, age=&quot; + age +
-                &#39;}&#39;;
-    }
-}</code></pre><pre><code>public class PersonTest {
-    public static void main(String[] args) {
-        // 创建一个Object型的对象
-        Object object = new Object();
-        System.out.println(object);
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 重写toString()方法</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Person{"</span> <span class="token operator">+</span>
+                <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建一个Object型的对象</span>
+        Object object <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 创建一个Person对象
-        Person person = new Person(&quot;苏彦&quot;,20);
-        // 如果直接打印一个引用类型的对象，系统会默认调用toString()方法
-        System.out.println(person);
-        System.out.println(person.toString());
-    }
-}</code></pre><pre><code>java.lang.Object@14ae5a5
-Person{name=&#39;苏彦&#39;, age=20}
-Person{name=&#39;苏彦&#39;, age=20}
+        <span class="token comment" spellcheck="true">// 创建一个Person对象</span>
+        Person person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 如果直接打印一个引用类型的对象，系统会默认调用toString()方法</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>Object<span class="token annotation punctuation">@14ae5a5</span>
+Person<span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token string">'苏彦'</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">}</span>
+Person<span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token string">'苏彦'</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">}</span>
 
-Process finished with exit code 0</code></pre><h2 id="3-finalize方法"><a href="#3-finalize方法" class="headerlink" title="3.finalize方法"></a>3.finalize方法</h2><blockquote>
+Process finished with exit code <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-finalize方法"><a href="#3-finalize方法" class="headerlink" title="3.finalize方法"></a>3.finalize方法</h2><blockquote>
 <p> finalize方法不需要程序员去调用，由<strong>系统自动调用</strong>。java对象如果没有更多的引用指向它，则该java对象成为垃圾数据，等待垃圾回收器的回收，垃圾回收器在回收这个java对象之前会自动调用该对象的finalize方法。finalize方法是该对象马上就要被回收了 </p>
 </blockquote>
 
@@ -1010,7 +1014,7 @@ Process finished with exit code 0</code></pre><h2 id="3-finalize方法"><a href=
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="equals方法">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="equals方法">
                         
                         <span class="card-title">equals方法</span>
                     </div>
@@ -1022,7 +1026,8 @@ Process finished with exit code 0</code></pre><h2 id="3-finalize方法"><a href=
  public boolean equals(Object obj) {
         return (this == obj);
     }
- 
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1063,7 +1068,7 @@ Process finished with exit code 0</code></pre><h2 id="3-finalize方法"><a href=
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="覆写与重载">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="覆写与重载">
                         
                         <span class="card-title">覆写与重载</span>
                     </div>
@@ -1261,7 +1266,7 @@ public class Father {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">7.7k</span>
             
 
             <br>

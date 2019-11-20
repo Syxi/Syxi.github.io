@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -446,7 +446,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    820
+                    791
                 </div>
                 
 
@@ -482,58 +482,60 @@
 <h2 id="2-泛型类、接口"><a href="#2-泛型类、接口" class="headerlink" title="2.泛型类、接口"></a>2.泛型类、接口</h2><blockquote>
 <p> <strong>泛型类，是在实例化类的时候指明泛型的具体类型</strong></p>
 </blockquote>
-<pre><code>public class Value&lt;T&gt; implements Generator&lt;T&gt; {
-    private T key;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Value</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">Generator</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> T key<span class="token punctuation">;</span>
 
-    public Value(T key) {
-        this.key = key;
-    }
-    // 注意，这不是泛型方法
-    public T getKey() {
-        return key;
-    }
+    <span class="token keyword">public</span> <span class="token function">Value</span><span class="token punctuation">(</span>T key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 注意，这不是泛型方法</span>
+    <span class="token keyword">public</span> T <span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void setKey(T key) {
-        this.key = key;
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setKey</span><span class="token punctuation">(</span>T key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static void main(String[] args) {
-        Value&lt;String&gt; v1 = new Value&lt;&gt;(&quot;we&quot;);
-        Value&lt;Integer&gt; v2 = new Value&lt;&gt;(199);
-        Value&lt;Character&gt; v3 = new Value&lt;&gt;(&#39;i&#39;);
-        System.out.println(v1.getKey() + &quot; &quot; + v2.getKey() + &quot; &quot; + v3.getKey());
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Value<span class="token operator">&lt;</span>String<span class="token operator">></span> v1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Value</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"we"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Value<span class="token operator">&lt;</span>Integer<span class="token operator">></span> v2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Value</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">199</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Value<span class="token operator">&lt;</span>Character<span class="token operator">></span> v3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Value</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'i'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>v1<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> v2<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> v3<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-we 199 i
-</code></pre><h2 id="3-泛型方法"><a href="#3-泛型方法" class="headerlink" title="3.泛型方法"></a>3.泛型方法</h2><blockquote>
+we <span class="token number">199</span> i
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-泛型方法"><a href="#3-泛型方法" class="headerlink" title="3.泛型方法"></a>3.泛型方法</h2><blockquote>
 <p>泛型方法可以定义在泛型类中，也可以定义在非泛型的普通类中。即泛型方法不依赖于泛型类的存在而存在，可以自己定义和使用。<strong>有一个原创：能使用泛型方法完成的功能，就不要使用泛型类</strong>。 为什么要使用泛型方法呢？因为泛型类要在实例化的时候就指明类型，如果想换一种类型，不得不重新new一次，可能不够灵活；而泛型方法可以在调用的时候指明类型，更加灵活。 </p>
 <p><strong>泛型方法，是在调用方法的时候指明泛型的具体类型 。</strong></p>
 </blockquote>
-<pre><code>public class Value{
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Value</span><span class="token punctuation">{</span>
 
-    // 这是一个泛型方法 &lt;T&gt;是定义泛型方法，T是方法返回值
-    public &lt;T&gt; T showValue1(T t) {
-        System.out.println(&quot;这是泛型方法&quot; + &quot; &quot; + t);
-        return t;
-    }
+    <span class="token comment" spellcheck="true">// 这是一个泛型方法 &lt;T>是定义泛型方法，T是方法返回值</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> T <span class="token function">showValue1</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是泛型方法"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // 静态方法需要定义成泛型方法，在类中要特定的声明，
-    // 即泛型类的数据类型形参是T，静态方法不可以同样声明T。
-    public static &lt;S&gt; void showValue2(S s) {
-        System.out.println(&quot;这是静态泛型方法&quot; + &quot; &quot; + s);
-    }
+    <span class="token comment" spellcheck="true">// 静态方法需要定义成泛型方法，在类中要特定的声明，</span>
+    <span class="token comment" spellcheck="true">// 即泛型类的数据类型形参是T，静态方法不可以同样声明T。</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>S<span class="token operator">></span> <span class="token keyword">void</span> <span class="token function">showValue2</span><span class="token punctuation">(</span>S s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是静态泛型方法"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static void main(String[] args) {
-        Value v1 = new Value();
-        v1.showValue1(520);
-        Value.showValue2(&quot;小幸运&quot;);
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Value v1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        v1<span class="token punctuation">.</span><span class="token function">showValue1</span><span class="token punctuation">(</span><span class="token number">520</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Value<span class="token punctuation">.</span><span class="token function">showValue2</span><span class="token punctuation">(</span><span class="token string">"小幸运"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 结果：
-这是泛型方法 520
-这是静态泛型方法 小幸运</code></pre><h2 id="3-泛型通配符"><a href="#3-泛型通配符" class="headerlink" title="3.泛型通配符"></a>3.泛型通配符</h2><ul>
+这是泛型方法 <span class="token number">520</span>
+这是静态泛型方法 小幸运<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-泛型通配符"><a href="#3-泛型通配符" class="headerlink" title="3.泛型通配符"></a>3.泛型通配符</h2><ul>
 <li>&lt;? extends T&gt;：是指 <strong>“上界通配符（Upper Bounds Wildcards）”</strong></li>
 <li>&lt;? super T&gt;：是指 <strong>“下界通配符（Lower Bounds Wildcards）”</strong></li>
 </ul>
@@ -1035,7 +1037,7 @@ we 199 i
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="多态">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="多态">
                         
                         <span class="card-title">多态</span>
                     </div>
@@ -1085,7 +1087,7 @@ we 199 i
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="类">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="类">
                         
                         <span class="card-title">类</span>
                     </div>
@@ -1285,7 +1287,7 @@ we 199 i
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">7.7k</span>
             
 
             <br>
