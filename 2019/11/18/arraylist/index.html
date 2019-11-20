@@ -530,22 +530,23 @@ o
 <h3 id="2-3-ArrayList实现Cloneable接口"><a href="#2-3-ArrayList实现Cloneable接口" class="headerlink" title="2.3 ArrayList实现Cloneable接口"></a>2.3 ArrayList实现Cloneable接口</h3><p>ArrayList实现了Cloneable接口，即覆盖了函数clone()，能被克隆。 </p>
 <p> ArrayList实现了java.io.Serializable接口，这意味着ArrayList支持序列化，能通过序列化去传输。 </p>
 <h2 id="3-ArrayList代码分析"><a href="#3-ArrayList代码分析" class="headerlink" title="3. ArrayList代码分析"></a>3. ArrayList代码分析</h2><h3 id="3-1-属性"><a href="#3-1-属性" class="headerlink" title="3.1 属性"></a>3.1 属性</h3><p>ArrayList的主要属性代码：</p>
-<pre><code>// 序列化id
-private static final long serialVersionUID = 8683452581122892189L;
-// 容器默认初始化大小
-private static final int DEFAULT_CAPACITY = 10;
-// 空数组，如果传入的容量为0时使用
-private static final Object[] EMPTY_ELEMENTDATA = {};
-// 空数组，传入容量时使用，添加第一个元素的时候会重新初始为默认容量大小(10)
-private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-// 存储元素的数组，真正存放元素的地方，使用transient是为了不序列化这个字段。
-transient Object[] elementData;
-// 集合中元素的个数，而不是elementData数组的长度。
-private int size;
-// 数组最大长度（2147483639），这里为什么是Integer.MAX_VALUE - 8是因为有些虚拟机在数组中保留了一些头部信息，防止内存溢出
-private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
-// 这个是从AbstractList继承过来的，代表ArrayList集合修改的次数
-protected transient int modCount = 0;</code></pre><h3 id="3-2-transient关键字"><a href="#3-2-transient关键字" class="headerlink" title="3.2 transient关键字"></a>3.2 transient关键字</h3><blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 序列化id</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> 8683452581122892189L<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 容器默认初始化大小</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> DEFAULT_CAPACITY <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 空数组，如果传入的容量为0时使用</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> EMPTY_ELEMENTDATA <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 空数组，传入容量时使用，添加第一个元素的时候会重新初始为默认容量大小(10)</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> DEFAULTCAPACITY_EMPTY_ELEMENTDATA <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 存储元素的数组，真正存放元素的地方，使用transient是为了不序列化这个字段。</span>
+<span class="token keyword">transient</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> elementData<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 集合中元素的个数，而不是elementData数组的长度。</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 数组最大长度（2147483639），这里为什么是Integer.MAX_VALUE - 8是因为有些虚拟机在数组中保留了一些头部信息，防止内存溢出</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> MAX_ARRAY_SIZE <span class="token operator">=</span> Integer<span class="token punctuation">.</span>MAX_VALUE <span class="token operator">-</span> <span class="token number">8</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 这个是从AbstractList继承过来的，代表ArrayList集合修改的次数</span>
+<span class="token keyword">protected</span> <span class="token keyword">transient</span> <span class="token keyword">int</span> modCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-transient关键字"><a href="#3-2-transient关键字" class="headerlink" title="3.2 transient关键字"></a>3.2 transient关键字</h3><blockquote>
 <p>我们都知道一个对象只要实现了Serilizable接口，这个对象就可以被序列化，java的这种序列化模式为开发者提供了很多便利，我们可以不必关系具体序列化的过程，只要这个类实现了Serilizable接口，这个类的所有属性和方法都会自动序列化。</p>
 <p> 然而在实际开发过程中，我们常常会遇到这样的问题，这个类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。</p>
 <p> 总之，java 的transient关键字为我们提供了便利，你只需要实现Serilizable接口，将不需要序列化的属性前添加关键字transient，序列化对象的时候，这个属性就不会序列化到指定的目的地中。</p>
