@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-21T03:58:09.318Z</updated>
+  <updated>2019-11-21T04:42:44.227Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ArrayList</title>
+    <title></title>
     <link href="https://goodboysuyan.ltd/2019/11/18/arraylist/"/>
     <id>https://goodboysuyan.ltd/2019/11/18/arraylist/</id>
-    <published>2019-11-18T15:07:51.000Z</published>
-    <updated>2019-11-21T03:58:09.318Z</updated>
+    <published>2019-11-18T15:07:51.253Z</published>
+    <updated>2019-11-21T04:42:44.227Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,12 @@
       
         
         
-          &lt;h2 id=&quot;1-ArrayList简介&quot;&gt;&lt;a href=&quot;#1-ArrayList简介&quot; class=&quot;headerlink&quot; title=&quot;1. ArrayList简介&quot;&gt;&lt;/a&gt;1.
+          &lt;p&gt;title: ArrayList&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax:
         
       
     
     </summary>
     
-      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
-    
-    
-      <category term="ArrayList" scheme="https://goodboysuyan.ltd/tags/ArrayList/"/>
     
   </entry>
   

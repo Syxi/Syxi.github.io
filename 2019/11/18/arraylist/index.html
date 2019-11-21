@@ -4,13 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ArrayList, 师大">
+    <meta name="keywords" content="师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1. ArrayList简介概念：ArrayList的底层数据结构是一个其容量能够动态增长的动态数组
-public class ArrayList&amp;lt;E&gt; extends AbstractList&amp;lt;E&gt;
-        imple">
+    <meta name="description" content="title: ArrayListtop: falsecover: falsetoc: truemathjax: truetags:
+
+ArrayListcategories:
+Java集合date: 2019-11-18 23:07:00p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@ public class ArrayList&amp;lt;E&gt; extends AbstractList&amp;lt;E&gt;
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ArrayList | 苏彦的博客</title>
+    <title>苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +293,13 @@ public class ArrayList&amp;lt;E&gt; extends AbstractList&amp;lt;E&gt;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ArrayList
+                        
                     </div>
                 </div>
             </div>
@@ -408,24 +409,11 @@ public class ArrayList&amp;lt;E&gt; extends AbstractList&amp;lt;E&gt;
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/ArrayList/" target="_blank">
-                            <span class="chip bg-color">ArrayList</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/Java集合/" class="post-category" target="_blank">
-                            Java集合
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -470,10 +458,16 @@ public class ArrayList&amp;lt;E&gt; extends AbstractList&amp;lt;E&gt;
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-ArrayList简介"><a href="#1-ArrayList简介" class="headerlink" title="1. ArrayList简介"></a>1. ArrayList简介</h2><p><strong>概念</strong>：<strong>ArrayList的底层数据结构是一个其容量能够动态增长的动态数组</strong></p>
+                <p>title: ArrayList<br>top: false<br>cover: false<br>toc: true<br>mathjax: true<br>tags:</p>
+<ul>
+<li>ArrayList<br>categories:</li>
+<li>Java集合<br>date: 2019-11-18 23:07:00<br>password:<br>summary:</li>
+</ul>
+<hr>
+<h2 id="1-ArrayList简介"><a href="#1-ArrayList简介" class="headerlink" title="1. ArrayList简介"></a>1. ArrayList简介</h2><p><strong>概念</strong>：<strong>ArrayList的底层数据结构是一个其容量能够动态增长的动态数组</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
         <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> RandomAccess<span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="2-ArrayList类的关系图"><a href="#2-ArrayList类的关系图" class="headerlink" title="2. ArrayList类的关系图"></a>2. ArrayList类的关系图</h2><p><img src="ArrayList/ArrayList.png" alt></p>
+<h2 id="2-ArrayList类的关系图"><a href="#2-ArrayList类的关系图" class="headerlink" title="2. ArrayList类的关系图"></a>2. ArrayList类的关系图</h2><p><img src="/../../../../MyBlogsource_postsimg/ArrayList-1574311353817.png" alt="ArrayList"></p>
 <h3 id="2-1-List接口"><a href="#2-1-List接口" class="headerlink" title="2.1 List接口"></a>2.1 List接口</h3><p>ArrayList继承了AbstractList,实现了List接口，它是一个数组队列，提供了相关的增加、删除、修改、遍历等功能。</p>
 <h3 id="2-2-RandmoAccess接口"><a href="#2-2-RandmoAccess接口" class="headerlink" title="2.2 RandmoAccess接口"></a>2.2 RandmoAccess接口</h3><p>ArrayList实现了RandmoAccess接口，即提供了随机访问功能。 RandmoAccess是java中用来被List实现，为List提供快速访问功能的。在ArrayList中，我们即可以通过元素的序号快速获取元素对象；这就是快速随机访问。 </p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RandomAccessTest</span> <span class="token punctuation">{</span>
@@ -736,7 +730,7 @@ baby
 <blockquote>
 <p><strong>ArrayList线程不安全</strong></p>
 <p><strong>解决方法：</strong></p>
-<p> 使用java.util.concurrent包下面的CopyOnWriteArrayList，使用方式跟ArrayList一样 </p>
+<p> 使用java.util.concurrent包下面的CopyOnWriteArrayList，使用方式跟ArrayList一样</p>
 </blockquote>
 
             </div>
@@ -896,7 +890,7 @@ baby
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ArrayList》
+                    《》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/18/arraylist/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -1231,17 +1225,18 @@ baby
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="ArrayList">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">ArrayList</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. ArrayList简介概念：ArrayList的底层数据结构是一个其容量能够动态增长的动态数组
-public class ArrayList&lt;E> extends AbstractList&lt;E>
-        imple
+                            title: ArrayListtop: falsecover: falsetoc: truemathjax: truetags:
+
+ArrayListcategories:
+Java集合date: 2019-11-18 23:07:00p
                         
                     </div>
                     <div class="publish-info">
@@ -1250,25 +1245,10 @@ public class ArrayList&lt;E> extends AbstractList&lt;E>
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java集合/" class="post-category" target="_blank">
-                                    Java集合
-                                </a>
-                            
-                            
                         </span>
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ArrayList/" target="_blank">
-                        <span class="chip bg-color">ArrayList</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -1465,13 +1445,6 @@ public class ArrayList&lt;E> extends AbstractList&lt;E>
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">
