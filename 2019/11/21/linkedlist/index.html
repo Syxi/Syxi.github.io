@@ -4,25 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java一切皆对象, 师大">
+    <meta name="keywords" content="LinkedList, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.面向对象编程思想
-把所有的有形或无形的事物都看作对象，并给对象赋予相应的属性和行为，建立对象之间的联系，使程序更加立体、形象地解决编程领域的问题。
+    <meta name="description" content="1. LinkedList简介
+LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现List的。
 
-2.类的关系
-
-
-类的关系
-描述
-具体实现
-
-
-
-继承
-父类与子类的关系
-extend">
+2. LinkedList类关系图
+3. LinkedList代码分析public class LinkedLi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +20,7 @@ extend">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java一切皆对象 | 苏彦的博客</title>
+    <title>LinkedList | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -304,13 +294,13 @@ extend">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java一切皆对象
+                        LinkedList
                     </div>
                 </div>
             </div>
@@ -421,8 +411,8 @@ extend">
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/面向对象编程/" target="_blank">
-                            <span class="chip bg-color">面向对象编程</span>
+                        <a href="/tags/LinkedList/" target="_blank">
+                            <span class="chip bg-color">LinkedList</span>
                         </a>
                         
                     </div>
@@ -433,8 +423,8 @@ extend">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java基础/" class="post-category" target="_blank">
-                            Java基础
+                        <a href="/categories/Java集合/" class="post-category" target="_blank">
+                            Java集合
                         </a>
                         
                     </div>
@@ -445,7 +435,7 @@ extend">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-08
+                    2019-11-21
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -459,14 +449,14 @@ extend">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    865
+                    655
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -482,105 +472,122 @@ extend">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-面向对象编程思想"><a href="#1-面向对象编程思想" class="headerlink" title="1.面向对象编程思想"></a>1.面向对象编程思想</h2><blockquote>
-<p>把所有的有形或无形的事物都看作对象，并给对象赋予相应的属性和行为，建立对象之间的联系，使程序更加立体、形象地解决编程领域的问题。</p>
+                <h2 id="1-LinkedList简介"><a href="#1-LinkedList简介" class="headerlink" title="1. LinkedList简介"></a>1. LinkedList简介</h2><blockquote>
+<p><strong>LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现List的。</strong></p>
 </blockquote>
-<h2 id="2-类的关系"><a href="#2-类的关系" class="headerlink" title="2.类的关系"></a>2.类的关系</h2><table>
-<thead>
-<tr>
-<th>类的关系</th>
-<th>描述</th>
-<th>具体实现</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>继承</td>
-<td>父类与子类的关系</td>
-<td>extends ( is-a )</td>
-</tr>
-<tr>
-<td>实现</td>
-<td>接口与实现类之间的关系</td>
-<td>implements ( can-do )</td>
-</tr>
-<tr>
-<td>组合</td>
-<td>整体和部分的同生共死的关系，两者完全不可分，具有相同的生命周期</td>
-<td>类是成员变量 ( contains-a )</td>
-</tr>
-<tr>
-<td>聚合</td>
-<td>整体和部分暂时组合在一起，两者可独立存在</td>
-<td>类是成员变量 ( has -a )</td>
-</tr>
-<tr>
-<td>依赖</td>
-<td>一个类用到另外一个类</td>
-<td>import类 ( use -a )</td>
-</tr>
-</tbody></table>
+<h2 id="2-LinkedList类关系图"><a href="#2-LinkedList类关系图" class="headerlink" title="2. LinkedList类关系图"></a>2. LinkedList类关系图</h2><p><img src="../images/LinkedList/LinkedList.png" alt="LinkedList"></p>
+<h2 id="3-LinkedList代码分析"><a href="#3-LinkedList代码分析" class="headerlink" title="3. LinkedList代码分析"></a>3. LinkedList代码分析</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
+    <span class="token keyword">extends</span> <span class="token class-name">AbstractSequentialList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
+    <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> Deque<span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>类关系中的组合是一种完全绑定的关系，所有成员共同完成一件使命，它们的生命周期是一样的。组合体现的是整体和部分的关系，同生共死，部分不能在整体之间共享。</p>
+<p>LinkedList继承了AbstractSequentialList是一个双向链表，可以当做队列，堆栈，或者是双端队列。</p>
+<p>实现了List接口可以有队列操作。</p>
+<p>实现了Deque接口可以有双端队列操作</p>
+<p>实现了Cloneable接口既可以用来做浅克隆</p>
+<p>实现了Serializable接口可以用来做网络传输和持久化，同时可以使用序列化来做深度克隆。</p>
 </blockquote>
-<blockquote>
-<p>聚合是一种可以拆分的整体和部分的关系，是一种非常松散的暂时组合，部分可以拆出来给另一个整体。</p>
-</blockquote>
-<blockquote>
-<p>依赖是除组合和聚合的类与类之间的关系，这个类只要import，那就是依赖关系。</p>
-</blockquote>
-<h2 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
-        <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> RandomAccess<span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable <span class="token punctuation">{</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractList</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractCollection</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">// 抽象方法，没有方法体</span>
- <span class="token keyword">abstract</span> <span class="token keyword">public</span> E <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 普通方法</span>
-<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">add</span><span class="token punctuation">(</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>抽象类是对同类事物相对具体的抽象，通常包括抽象方法、普通方法、属性变量。抽象类是对整个类抽象，包括类的属性和行为。设计抽象类是自下而上的过程，我子类需要，所以我定义抽象类。</p>
-</blockquote>
-<h2 id="4接口"><a href="#4接口" class="headerlink" title="4接口"></a>4接口</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Collection</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">// 抽象方法</span>
- <span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="3-1-类的属性"><a href="#3-1-类的属性" class="headerlink" title="3.1 类的属性"></a>3.1 类的属性</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 存储元素的个数</span>
+<span class="token keyword">transient</span> <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 链表首节点</span>
+<span class="token keyword">transient</span> Node<span class="token operator">&lt;</span>E<span class="token operator">></span> first<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 链表尾节点</span>
+<span class="token keyword">transient</span> Node<span class="token operator">&lt;</span>E<span class="token operator">></span> last<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-内部类Node"><a href="#3-2-内部类Node" class="headerlink" title="3.2 内部类Node"></a>3.2 内部类Node</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
+    E item<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 存储的元素</span>
+    Node<span class="token operator">&lt;</span>E<span class="token operator">></span> next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指向后一个元素的引用</span>
+    Node<span class="token operator">&lt;</span>E<span class="token operator">></span> prev<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指向前一个元素的引用</span>
 
- <span class="token comment" spellcheck="true">// 默认方法，@since 1.8</span>
-    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"unchecked"</span><span class="token punctuation">,</span> <span class="token string">"rawtypes"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span>Comparator<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> E<span class="token operator">></span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Object<span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">(</span>Comparator<span class="token punctuation">)</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ListIterator<span class="token operator">&lt;</span>E<span class="token operator">></span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>Object e <span class="token operator">:</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            i<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            i<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Node</span><span class="token punctuation">(</span>Node<span class="token operator">&lt;</span>E<span class="token operator">></span> prev<span class="token punctuation">,</span> E element<span class="token punctuation">,</span> Node<span class="token operator">&lt;</span>E<span class="token operator">></span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>item <span class="token operator">=</span> element<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>prev <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p> Node 是 LInkedList 的内部类，定义了存储的数据元素，前一个节点和后一个节点，典型的双链表结构。 </p>
+</blockquote>
+<h3 id="3-3-构造方法"><a href="#3-3-构造方法" class="headerlink" title="3.3 构造方法"></a>3.3 构造方法</h3><pre><code>// 无参构造方法
+public LinkedList() {
+
+}
+
+// 有参构造方法，
+public LinkedList(Collection&lt;? extends E&gt; c) {
+    this();
+    // 将集合c所有元素插入链表中
+    addAll(c);
+}</code></pre><h2 id="4-LinkedList的主要方法"><a href="#4-LinkedList的主要方法" class="headerlink" title="4. LinkedList的主要方法"></a>4. LinkedList的主要方法</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedListTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> l <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token string">"链头"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token string">"链尾"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 向链表中添加元素,在链表尾部添加</span>
+        l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 指定链表下标index处插入</span>
+        l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        l<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ListIterator it <span class="token operator">=</span> l<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> k <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// l集合的所有元素添加到k集合</span>
+        k<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 迭代器遍历集合</span>
+        ListIterator li <span class="token operator">=</span> k<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"迭代器正向遍历："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"迭代器逆向遍历："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 迭代器逆向遍历</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">// 静态方法 接口的静态方法只能由接口来调用，</span>
-    <span class="token comment" spellcheck="true">// 它不属于实现了那个接口接口的对象，对象调用不到。</span>
-    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">staticSuYan</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"接口中的静态方法"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">// 接口中成员变量默认是public static final,可以省略这些修饰符</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> susu <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>设计接口是自上而下的过程，我接口规范某一行为，我某类需要这个行为，我实现某接口。</p>
-</blockquote>
-<h2 id="5-抽象类和接口的相同点和不同的"><a href="#5-抽象类和接口的相同点和不同的" class="headerlink" title="5.抽象类和接口的相同点和不同的"></a>5.抽象类和接口的相同点和不同的</h2><blockquote>
-<ul>
-<li>在java中，抽象类和接口都不能直接进行实例化，如果要实例化，抽象类引用变量必须指向实现所有抽象方法的子类对象。接口引用变量必须指向实现所有接口方法的类对象。</li>
-<li>抽象类要被子类继承，接口要被类实现。</li>
-<li>接口只能做方法的声明，抽象类既可以做方法声明，还可以做方法实现。</li>
-<li>类只能单继承。</li>
-<li>类或接口可以继承接口，并且可以继承多个接口。</li>
-<li>接口要被类实现，类可以实现多个接口。</li>
-<li>接口中的变量只能是静态的公共变量，抽象类中的变量是普通的变量，即常量。 </li>
-</ul>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">链头
+链尾
+a
+b
+w
+c
+迭代器正向遍历：
+y
+a
+n
+链头
+链尾
+a
+b
+w
+c
+迭代器逆向遍历：
+c
+w
+b
+a
+链尾
+链头
+n
+a
+y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-LinkedList总结"><a href="#5-LinkedList总结" class="headerlink" title="5. LinkedList总结"></a>5. LinkedList总结</h2><blockquote>
+<p> <strong>LinkedList是一个以双链表实现的List。</strong> </p>
+<p> <strong>LinkedList还是一个双端队列，具有队列、双端队列、栈的特性。</strong> </p>
+<p> <strong>LinkedList在首尾添加、删除元素非常高效，时间复杂度为O(1)。</strong> </p>
+<p> <strong>LinkedList在中间添加、删除元素比较低效，时间复杂度为O(n)。</strong> </p>
+<p><strong>LinkedList查询和修改慢</strong></p>
+<p><strong>LinkedList 线程不安全。</strong></p>
 </blockquote>
 
             </div>
@@ -740,9 +747,9 @@ extend">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java一切皆对象》
+                    《LinkedList》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/08/java-yi-qie-jie-dui-xiang/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/21/linkedlist/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -783,7 +790,7 @@ extend">
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/08/java-yi-qie-jie-dui-xiang/',
+        id: '2019/11/21/linkedlist/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1066,53 +1073,52 @@ extend">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/08/lei/">
+                <a href="/2019/11/21/linkedlist/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="类">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="LinkedList">
                         
-                        <span class="card-title">类</span>
+                        <span class="card-title">LinkedList</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.类
-定义：类是一组相关的属性和行为的集合，类一般都是泛指某一种事物。
-实例对象：对象就是该事物的具体表现。
+                            1. LinkedList简介
+LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现List的。
 
-2.内部类
-定义：在一个类的内部定义另外一个类。
-特点：内部类可以直接访问外部类的成员，包括private修饰的变量和方法。
-
+2. LinkedList类关系图
+3. LinkedList代码分析public class LinkedLi
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/类/" target="_blank">
-                        <span class="chip bg-color">类</span>
+                    <a href="/tags/LinkedList/" target="_blank">
+                        <span class="chip bg-color">LinkedList</span>
                     </a>
                     
                 </div>
@@ -1123,60 +1129,48 @@ extend">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/08/java-yi-qie-jie-dui-xiang/">
+                <a href="/2019/11/18/arraylist/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java一切皆对象">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ArrayList">
                         
-                        <span class="card-title">Java一切皆对象</span>
+                        <span class="card-title">ArrayList</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.面向对象编程思想
-把所有的有形或无形的事物都看作对象，并给对象赋予相应的属性和行为，建立对象之间的联系，使程序更加立体、形象地解决编程领域的问题。
-
-2.类的关系
-
-
-类的关系
-描述
-具体实现
-
-
-
-继承
-父类与子类的关系
-extend
+                            
+1. ArrayList简介概念：ArrayList的底层数据结构是一个其容量能够动态增长的动态数组
+public class ArrayList&lt;E> extends AbstractList&lt;E>
+        impl
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/面向对象编程/" target="_blank">
-                        <span class="chip bg-color">面向对象编程</span>
+                    <a href="/tags/ArrayList/" target="_blank">
+                        <span class="chip bg-color">ArrayList</span>
                     </a>
                     
                 </div>
