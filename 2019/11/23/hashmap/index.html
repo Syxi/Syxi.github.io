@@ -4,15 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="String类, 师大">
+    <meta name="keywords" content="HashMap, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.String类
-字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。
+    <meta name="description" content="1. HashMap简介
+HashMap的底层数据结构是数组 + 链表 + 红黑树
 
-2.String为什么不可变public final class String
-    i">
+public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
+    implements Map&amp;l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>String类 | 苏彦的博客</title>
+    <title>HashMap | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -294,13 +294,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        String类
+                        HashMap
                     </div>
                 </div>
             </div>
@@ -411,8 +411,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/String类/" target="_blank">
-                            <span class="chip bg-color">String类</span>
+                        <a href="/tags/HashMap/" target="_blank">
+                            <span class="chip bg-color">HashMap</span>
                         </a>
                         
                     </div>
@@ -423,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java基础/" class="post-category" target="_blank">
-                            Java基础
+                        <a href="/categories/Java集合/" class="post-category" target="_blank">
+                            Java集合
                         </a>
                         
                     </div>
@@ -435,7 +435,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-10
+                    2019-11-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    877
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
                 
@@ -472,146 +472,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-String类"><a href="#1-String类" class="headerlink" title="1.String类"></a>1.String类</h2><blockquote>
-<p>字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。</p>
+                <h2 id="1-HashMap简介"><a href="#1-HashMap简介" class="headerlink" title="1. HashMap简介"></a>1. HashMap简介</h2><blockquote>
+<p>HashMap的底层数据结构是数组 + 链表 + 红黑树</p>
 </blockquote>
-<h2 id="2-String为什么不可变"><a href="#2-String为什么不可变" class="headerlink" title="2.String为什么不可变"></a>2.String为什么不可变</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">String</span>
-    <span class="token keyword">implements</span> <span class="token class-name">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable</span><span class="token punctuation">,</span> Comparable<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">,</span> CharSequence <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// String本质是一个char数组，1.9后变成byte数组,节省内存空间的开辟</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">char</span> value<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span>
+    <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>HashMap的底层数据结构图</strong></p>
+<p><img src="../images/HashMap/122-1574520834758.jpg" alt="122"></p>
 <blockquote>
-<p> 首先String类是用final关键字修饰，这说明String不可继承。再看下面，String类的主力成员字段value是个char[ ]数组，而且是用final修饰的。final修饰的字段创建以后就不可改变。 </p>
+<p>  table数组的table[0]也叫作桶，每个桶中可以存储多个元素。数组的长度是table.length。</p>
+<p> HashMap采用Entry数组来存储key-value对，每一个键值对组成了一个Entry实体，Entry类实际上是一个单向的链表结构，它具有Next指针，可以连接下一个Entry实体，以此来解决Hash冲突的问题。  </p>
+<p>table数组的下标，是&lt; K , V&gt; 中的K的哈希值，K经过hash算法得到哈希值。但是可能存在同一hash值的元素已经被放在数组同一位置了，这时就添加到同一hash值的元素的后面，他们在数组的同一位置，但是形成了链表，同一各链表上的Hash值是相同的，所以说数组存放的是链表。而当链表长度太长时，链表就转换为红黑树，这样大大提高了查找的效率。</p>
 </blockquote>
+<p><strong>HashMap的数组 + 链表结构</strong></p>
 <blockquote>
-<p> 有的人以为故事就这样完了，其实没有。因为虽然value是不可变，也只是value这个引用地址不可变。挡不住Array数组是可变的事实 。 也就是说Array变量只是stack上的一个引用，数组的本体结构在heap堆。String类里的value用final修饰，只是说stack里的这个叫value的引用地址不可变。没有说堆里array本身数据不可变。 </p>
+<p>当桶内链表的长度小于8时，HashMap的数据结构是数组 + 单链表，table数组里的每个桶存储的是单链表数据结构的元素。</p>
 </blockquote>
-<h2 id="3-字符串常量池"><a href="#3-字符串常量池" class="headerlink" title="3.字符串常量池"></a>3.字符串常量池</h2><blockquote>
-<p>我们声明的字符串会放到一个叫做字符串常量池的地方，这样可以减少内存在使用，字符串常量池是堆的一部分。<strong>使用字符串常量池</strong>。<strong>每当我们创建字符串常量时，JVM会首先检查字符串常量池，如果该字符串已经存在常量池中，那么就直接返回常量池中的实例引用。如果字符串不存在常量池中，就会实例化该字符串并且将其放到常量池中。由于String字符串的不可变性我们可以十分肯定常量池中一定不存在两个相同的字符串</strong></p>
+<p><strong>HashMap的数组 + 红黑树结构</strong></p>
+<blockquote>
+<p>桶内链表的长度大于8，HashMap的查询效率变低。当HashMap的链表长度大于8时，需要把HashMap的链表数据结构转换成红黑树。</p>
 </blockquote>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringTest</span> <span class="token punctuation">{</span>
+<h2 id="2-存储元素put"><a href="#2-存储元素put" class="headerlink" title="2.存储元素put"></a><strong>2.存储元素put</strong></h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// Java 程序中的所有字符串字面值（如"suyan"）都作为String的对象。</span>
-        String s1 <span class="token operator">=</span> <span class="token string">"suYan"</span><span class="token punctuation">;</span>
-
-        String s2 <span class="token operator">=</span> <span class="token string">"suYan"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// 不建议这种写法，浪费堆内存</span>
-        String s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"suYan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        String s4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"allRight"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String类重写了equals()方法，比较的是两个对象的内容</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"good"</span><span class="token punctuation">,</span> <span class="token string">"苏小彦"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token boolean">true</span>
-<span class="token boolean">false</span>
-<span class="token boolean">true</span>
-Process finished with exit code <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-String类常用方法"><a href="#4-String类常用方法" class="headerlink" title="4.String类常用方法"></a>4.String类常用方法</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringTest</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        String s <span class="token operator">=</span> <span class="token string">"suYan"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// char charAt(int index); 获取index位置的字符</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// boolean contains(CharSequence s); 判断字符串是否包含某个字符串</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"suY"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// boolean endsWith(String endStr); 判断是否是已某个字符串结尾</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"an"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// boolean equalsIgnoreCase(String anotherString); 忽略大小写比较两个字符串是否相等</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"sUYAn"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// byte getBytes(); 转换成byte数组</span>
-        String s1 <span class="token operator">=</span> <span class="token string">"goodBoy"</span><span class="token punctuation">;</span>
-        <span class="token keyword">byte</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> array1 <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>array1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">// int indexOf(); 取指定字符在字符串中的位置</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// int indexOf(String str, int fromIndexOf);从指定的下标开始取得指定字符在字符串的位置</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// int lastIndexOf(String str); 从后面开始取得指定字符在字符串最后出现的位置</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// int lastIndexOf(String str, int fromIndex); 从后面指定的下标开始取得指定字符在字符串最后出现的位置</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// int length()获取字符串的长度</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        String s2 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String replaceALL(String str1 String str2); str2替换字符串中str1的内容</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span><span class="token string">"llo"</span><span class="token punctuation">,</span><span class="token string">"www"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String[] split(String s); 根据指定的表达式拆分字符串</span>
-        String s3 <span class="token operator">=</span> <span class="token string">"a,b,c,d"</span><span class="token punctuation">;</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> array2 <span class="token operator">=</span> s3<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array2<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>array2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">// boolean startsWith(String s); 判断是否以某个字符串开始</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"he"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String substring(int begin); 根据传入的索引位置截取字符串</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String substring(int beginIndex, int endIndex); 根据传入的起始和结束位置截字符串</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// char[] toCharArray(); 将字符串转换为char数组</span>
-        String s5 <span class="token operator">=</span> <span class="token string">"eclipse"</span><span class="token punctuation">;</span>
-        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array3 <span class="token operator">=</span> s5<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array3<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>array3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">// void toUpperCase();转换成大写</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// void toLowerCase(); 转换成小写</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String trim(); 去除首尾空格</span>
-        String s4 <span class="token operator">=</span> <span class="token string">" may "</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s4<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// String valueOf(Object ob); 将其他类型转换为字符串类型</span>
-        Object ob <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ob <span class="token operator">=</span> null<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// System.out.println(ob.toString()); 报空指针异常</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>ob<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java">代码运行结果：
-a
-<span class="token boolean">true</span>
-<span class="token boolean">true</span>
-<span class="token boolean">true</span>
-<span class="token number">103</span> 
-<span class="token number">111</span> 
-<span class="token number">111</span> 
-<span class="token number">100</span> 
-<span class="token number">66</span> 
-<span class="token number">111</span> 
-<span class="token number">121</span> 
-<span class="token number">4</span>
-<span class="token number">6</span>
-<span class="token number">5</span>
-<span class="token number">3</span>
-<span class="token number">7</span>
-hewww
-a 
-b 
-c 
-d 
-<span class="token boolean">true</span>
-llo
-hel
-e 
-c 
-l 
-i 
-p 
-s 
-e 
-HELLO
-hello
-may
-null
-Process finished with exit code <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p> 在这里HashMap&lt;String, String&gt;，第一个参数是键，第二个参数是值，合起来叫做键值对。存储的时候只需要调用put方法即可。那底层的实现原理是怎么样的呢？这里还是先给出一个流程图 。</p>
+</blockquote>
+<p><img src="../images/HashMap/4.jpg" alt="4"></p>
+<blockquote>
+<p><strong>执行流程：</strong></p>
+<p>（1）第一步：调用put方法传入键值对</p>
+<p>（2）第二步：使用hash算法计算hash值</p>
+<p>（3）第三步：根据hash值确定存放的位置，判断是否和其他键值对位置发生了冲突</p>
+<p>（4）第四步：若没有发生冲突，直接存放在数组中即可</p>
+<p>（5）第五步：若发生了冲突，还要判断此时的数据结构是什么？</p>
+<p>（6）第六步：若此时的数据结构是红黑树，那就直接插入红黑树中</p>
+<p>（7）第七步：若此时的数据结构是链表，判断插入之后是否大于等于8</p>
+<p>（8）第八步：插入之后大于8了，就要先调整为红黑树，在插入</p>
+<p>（9）第九步：插入之后不大于8，那么就直接插入到链表尾部即可。</p>
+</blockquote>
+<h2 id="3-HashMap的扩容"><a href="#3-HashMap的扩容" class="headerlink" title="3. HashMap的扩容"></a>3. HashMap的扩容</h2><blockquote>
+<p>HashMap的默认初始容量为16（1&lt;&lt;4），默认装载因子为0.75f，容量总是2的n次方。 为什么扩容呢？很明显就是当前容量不够，也就是put了太多的元素。为此我们还是先给出一个流程图，再来进行分析。 </p>
+</blockquote>
+<p><img src="../images/HashMap/5.jpg" alt="5"></p>
+<blockquote>
+<p> 这个扩容就比较简单了，HaspMap扩容就是就是先计算 新的hash表容量和新的容量阀值，然后初始化一个新的hash表，将旧的键值对重新映射在新的hash表里。如果在旧的hash表里涉及到红黑树，那么在映射到新的hash表中还涉及到红黑树的拆分。 </p>
+</blockquote>
 
             </div>
             <hr />
@@ -770,9 +679,9 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《String类》
+                    《HashMap》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/10/string-lei/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/23/hashmap/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -813,7 +722,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/10/string-lei/',
+        id: '2019/11/23/hashmap/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1096,51 +1005,52 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/12/fu-xie-yu-chong-zai/">
+                <a href="/2019/11/23/hashmap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="覆写与重载">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="HashMap">
                         
-                        <span class="card-title">覆写与重载</span>
+                        <span class="card-title">HashMap</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.覆写
-如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。
+                            1. HashMap简介
+HashMap的底层数据结构是数组 + 链表 + 红黑树
 
-public class Father {
-    public static void main(String[] args) {
-        
+public class HashMap&lt;K,V> extends AbstractMap&lt;K,V>
+    implements Map&l
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/覆写-重载/" target="_blank">
-                        <span class="chip bg-color">覆写 重载</span>
+                    <a href="/tags/HashMap/" target="_blank">
+                        <span class="chip bg-color">HashMap</span>
                     </a>
                     
                 </div>
@@ -1154,32 +1064,35 @@ public class Father {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/09/duo-tai/">
+                <a href="/2019/11/23/arraylist/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="多态">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ArrayList">
                         
-                        <span class="card-title">多态</span>
+                        <span class="card-title">ArrayList</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.什么是多态
-多态是同一行为具有不同表现形式或形态的能力。即对象多种表现形式的体现，就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时的不确定，而是在程序运行期间确定，即一个引用变量到底会指向哪个类的实例对象
+                            1. ArrayList简介
+概念：ArrayList的底层数据结构是一个其容量能够动态增长的动态数组
+
+public class ArrayList&lt;E> extends AbstractList&lt;E>
+        imp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
@@ -1189,8 +1102,8 @@ public class Father {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java多态/" target="_blank">
-                        <span class="chip bg-color">Java多态</span>
+                    <a href="/tags/ArrayList/" target="_blank">
+                        <span class="chip bg-color">ArrayList</span>
                     </a>
                     
                 </div>

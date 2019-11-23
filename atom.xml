@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-23T07:40:56.855Z</updated>
+  <updated>2019-11-23T16:56:50.486Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HashMap</title>
+    <link href="https://goodboysuyan.ltd/2019/11/23/hashmap/"/>
+    <id>https://goodboysuyan.ltd/2019/11/23/hashmap/</id>
+    <published>2019-11-23T07:45:54.000Z</published>
+    <updated>2019-11-23T16:56:50.486Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-HashMap简介&quot;&gt;&lt;a href=&quot;#1-HashMap简介&quot; class=&quot;headerlink&quot; title=&quot;1. HashMap简介&quot;&gt;&lt;/a&gt;1. HashMap简介&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;HashMap的底层数据结构是数组
+        
+      
+    
+    </summary>
+    
+      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
+    
+    
+      <category term="HashMap" scheme="https://goodboysuyan.ltd/tags/HashMap/"/>
+    
+  </entry>
   
   <entry>
     <title>ArrayList</title>
