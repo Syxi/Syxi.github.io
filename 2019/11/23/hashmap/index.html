@@ -477,8 +477,9 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span>
     <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="../images/HashMap/HashMap.png" alt="HashMap"></p>
 <p><strong>HashMap的底层数据结构图</strong></p>
-<p><img src="../images/HashMap/122-1574520834758.jpg" alt="122"></p>
+<p><img src="../images/HashMap/122-1574528784873.jpg" alt="122"></p>
 <blockquote>
 <p>  table数组的table[0]也叫作桶，每个桶中可以存储多个元素。数组的长度是table.length。</p>
 <p> HashMap采用Entry数组来存储key-value对，每一个键值对组成了一个Entry实体，Entry类实际上是一个单向的链表结构，它具有Next指针，可以连接下一个Entry实体，以此来解决Hash冲突的问题。  </p>
