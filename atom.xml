@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-22T08:06:14.729Z</updated>
+  <updated>2019-11-23T07:40:56.855Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ArrayList</title>
+    <link href="https://goodboysuyan.ltd/2019/11/23/arraylist/"/>
+    <id>https://goodboysuyan.ltd/2019/11/23/arraylist/</id>
+    <published>2019-11-23T07:21:51.000Z</published>
+    <updated>2019-11-23T07:40:56.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-ArrayList简介&quot;&gt;&lt;a href=&quot;#1-ArrayList简介&quot; class=&quot;headerlink&quot; title=&quot;1. ArrayList简介&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
+    
+    
+      <category term="ArrayList" scheme="https://goodboysuyan.ltd/tags/ArrayList/"/>
+    
+  </entry>
   
   <entry>
     <title>LinkedList</title>
@@ -39,33 +65,6 @@
     
     
       <category term="LinkedList" scheme="https://goodboysuyan.ltd/tags/LinkedList/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArrayList</title>
-    <link href="https://goodboysuyan.ltd/2019/11/18/arraylist/"/>
-    <id>https://goodboysuyan.ltd/2019/11/18/arraylist/</id>
-    <published>2019-11-18T15:06:39.000Z</published>
-    <updated>2019-11-21T05:47:03.961Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;1-ArrayList简介&quot;&gt;&lt;a href=&quot;#1-ArrayList简介&quot; class=&quot;headerlink&quot; title=&quot;1. ArrayList简介&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Java集合" scheme="https://goodboysuyan.ltd/categories/Java%E9%9B%86%E5%90%88/"/>
-    
-    
-      <category term="ArrayList" scheme="https://goodboysuyan.ltd/tags/ArrayList/"/>
     
   </entry>
   
