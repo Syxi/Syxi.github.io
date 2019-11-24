@@ -412,8 +412,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/equals方法/" target="_blank">
-                            <span class="chip bg-color">equals方法</span>
+                        <a href="/tags/hashCode和equals/" target="_blank">
+                            <span class="chip bg-color">hashCode和equals</span>
                         </a>
                         
                     </div>
@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    367
+                    652
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -481,7 +481,7 @@
 <p> Object中的equals方法比较的是两个引用的内存地址。但是在现实的业务逻辑当中，不应该比较内存地址，应该比较地址里面的内容，所以需要对equals方法进行重写。 </p>
 <p> <strong>注意：在使用自己创建的类进行equals比较时，一定要先重写equals方法</strong> </p>
 </blockquote>
-<h2 id="2-equals代码测试"><a href="#2-equals代码测试" class="headerlink" title="2.equals代码测试"></a>2.equals代码测试</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<h3 id="1-1-equals代码测试"><a href="#1-1-equals代码测试" class="headerlink" title="1.1 equals代码测试"></a>1.1 equals代码测试</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -515,24 +515,39 @@
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-测试结果"><a href="#3-测试结果" class="headerlink" title="3.测试结果"></a>3.测试结果</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token boolean">false</span>
+<h3 id="1-2-测试结果"><a href="#1-2-测试结果" class="headerlink" title="1.2 测试结果"></a>1.2 测试结果</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token boolean">false</span>
 <span class="token boolean">true</span>
 <span class="token boolean">false</span>
 Process finished with exit code <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-equals方法总结"><a href="#4-equals方法总结" class="headerlink" title="4. equals方法总结"></a>4. equals方法总结</h2><blockquote>
+<h3 id="1-3-equals方法总结"><a href="#1-3-equals方法总结" class="headerlink" title="1.3 equals方法总结"></a>1.3 equals方法总结</h3><blockquote>
 <ul>
-<li>Object中的equals方法比较的是两个引用的内存地址 </li>
+<li><strong>Object中的equals方法比较的是两个引用的内存地址</strong> </li>
 </ul>
 <ul>
-<li><strong>重写了Object类中的equals方法</strong>，比较的是对象的内容 </li>
+<li><strong>重写了Object类中的equals方法，比较的是对象的内容</strong> </li>
 </ul>
 <ul>
-<li>比较两个String类型时，不能使用==，要使用equals方法，String已经重写了Object中的equals方法，比较的是内容。 </li>
+<li><strong>比较两个String类型时，不能使用==，要使用equals方法，String已经重写了Object中的equals方法，比较的是内容。</strong> </li>
 </ul>
 <ul>
-<li>== 两边如果是引用类型，则比较内存地址，地址相同则是true,反之则false. </li>
+<li><strong>== 两边如果是引用类型，则比较内存地址，地址相同则是true,反之则false.</strong> </li>
 </ul>
 </blockquote>
+<h2 id="2-hashCode和equals"><a href="#2-hashCode和equals" class="headerlink" title="2. hashCode和equals"></a>2. hashCode和equals</h2><blockquote>
+<p>hashCode和equals用来标识对象，两个方法协同工作可用来判断两个对象是否相等。众所周知，根据生成的哈希将数据离散开来，可以使存储元素更快。对象通过调用Object.hashCode()生成哈希值；由于不可避免地会存在哈希值冲突的情况，因此当hashCode相同时，还需要调用equals进行一次值的比较；但是，若hsahCode不相同，将直接判定Object不同，跳过equals，这加快了冲突处理效率。</p>
+</blockquote>
+<blockquote>
+<p><strong>Object类定义中对hashCode和equals的要求：</strong></p>
+<p>（1）如果两个对象的equals的结果是相等的，则两个对象的hashCode的返回结果也必须是相同的。</p>
+<p>（2）任何时候覆写equals，都必须同时覆写hashCode。</p>
+</blockquote>
+<blockquote>
+<p>在Map和Set类集合中，用到这两个方法时，首先判断hashCode的值，如果hash相等，则再判断equals的结果。</p>
+</blockquote>
+<blockquote>
+<pre><code>if (e.hash == hash &amp;&amp; ((k = e.key == key) || (key != null &amp;&amp; key.equals(k))))
+    return (e = getNode(hash(key),key)) == null ? null : e.value;
+    如果hash相等，则再判断((k = e.key == key) || (key != null &amp;&amp; key.equals(k)))</code></pre></blockquote>
 
             </div>
             <hr />
@@ -1274,7 +1289,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10.2k</span>
+            <span class="white-color">10.4k</span>
             
 
             <br>

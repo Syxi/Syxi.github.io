@@ -127,7 +127,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/12/hashcode-he-equals-fang-fa/"/>
     <id>https://goodboysuyan.ltd/2019/11/12/hashcode-he-equals-fang-fa/</id>
     <published>2019-11-12T15:20:04.000Z</published>
-    <updated>2019-11-24T17:38:19.999Z</updated>
+    <updated>2019-11-24T18:37:54.583Z</updated>
     
     <summary type="html">
     
@@ -144,7 +144,7 @@
       <category term="Java基础" scheme="https://goodboysuyan.ltd/categories/Java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="equals方法" scheme="https://goodboysuyan.ltd/tags/equals%E6%96%B9%E6%B3%95/"/>
+      <category term="hashCode和equals" scheme="https://goodboysuyan.ltd/tags/hashCode%E5%92%8Cequals/"/>
     
   </entry>
   
