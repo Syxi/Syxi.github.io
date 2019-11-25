@@ -4,16 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="覆写与重载, 师大">
+    <meta name="keywords" content="Collection, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.覆写
-如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。
+    <meta name="description" content="1. Collection简介
+Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。
 
-public class Father {
-    public static void main(String[] args) {
-        ">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@ public class Father {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>覆写与重载 | 苏彦的博客</title>
+    <title>Collection | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -295,13 +293,13 @@ public class Father {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        覆写与重载
+                        Collection
                     </div>
                 </div>
             </div>
@@ -412,8 +410,8 @@ public class Father {
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/覆写-重载/" target="_blank">
-                            <span class="chip bg-color">覆写 重载</span>
+                        <a href="/tags/Collection概述/" target="_blank">
+                            <span class="chip bg-color">Collection概述</span>
                         </a>
                         
                     </div>
@@ -424,8 +422,8 @@ public class Father {
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java基础/" class="post-category" target="_blank">
-                            Java基础
+                        <a href="/categories/Java集合/" class="post-category" target="_blank">
+                            Java集合
                         </a>
                         
                     </div>
@@ -436,7 +434,7 @@ public class Father {
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-12
+                    2019-11-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -450,7 +448,7 @@ public class Father {
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    214
+                    74
                 </div>
                 
 
@@ -473,34 +471,8 @@ public class Father {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-覆写"><a href="#1-覆写" class="headerlink" title="1.覆写"></a>1.覆写</h2><blockquote>
-<p>如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。</p>
-</blockquote>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Father father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        father<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"叫爸爸"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"祖安"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-覆写总结"><a href="#2-覆写总结" class="headerlink" title="2.覆写总结"></a>2.覆写总结</h2><blockquote>
-<p><strong>一大两小两同</strong></p>
-<ul>
-<li><strong>一大</strong>：子类的方法访问权限控制符只能相同或变大。</li>
-<li><strong>两小</strong>：子类抛出异常和方法返回值只能变小（或相同），都能够转型成父类对象。子类的返回值、抛出异常，与父类存在继承关系。</li>
-<li><strong>两同</strong>：方法名和参数必须完全相同。</li>
-</ul>
-</blockquote>
-<h2 id="3-重载"><a href="#3-重载" class="headerlink" title="3.重载"></a>3.重载</h2><blockquote>
-<p>在同一个类中，如果多个方法有相同的名字，不同的参数（参数个数、顺序、类型不同），即称为重载。</p>
+                <h2 id="1-Collection简介"><a href="#1-Collection简介" class="headerlink" title="1. Collection简介"></a>1. Collection简介</h2><blockquote>
+<p>Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。</p>
 </blockquote>
 
             </div>
@@ -660,9 +632,9 @@ public class Father {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《覆写与重载》
+                    《Collection》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/12/fu-xie-yu-chong-zai/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/25/collection/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -703,7 +675,7 @@ public class Father {
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/12/fu-xie-yu-chong-zai/',
+        id: '2019/11/25/collection/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -986,47 +958,51 @@ public class Father {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/12/object-lei/">
+                <a href="/2019/11/25/collection/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Object类">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Collection">
                         
-                        <span class="card-title">Object类</span>
+                        <span class="card-title">Collection</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.Object类
- Object 类是所有类的父类,即每个类都直接或间接继承自该类。所以一个 Object 类型的变量可以引用任何对象,不论是类实例还是数组。  在不明确给出父类的情况下, Java 会自动把 Object 作为要定义类的
+                            1. Collection简介
+Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。
+
+
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Object类/" target="_blank">
-                        <span class="chip bg-color">Object类</span>
+                    <a href="/tags/Collection概述/" target="_blank">
+                        <span class="chip bg-color">Collection概述</span>
                     </a>
                     
                 </div>
@@ -1040,35 +1016,35 @@ public class Father {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/10/string-lei/">
+                <a href="/2019/11/23/hashmap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="String类">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="HashMap">
                         
-                        <span class="card-title">String类</span>
+                        <span class="card-title">HashMap</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.String类
-字符串广泛应用 在  Java 编程中，在  Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串 。
+                            1. HashMap 简介
+HashMap 的底层数据结构是数组 + 链表 + 红黑树
 
-2.String为什么不可变public final class String
-   
+public class HashMap&lt;K,V> extends AbstractMap&lt;K,V>
+    implements Map
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/Java集合/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
@@ -1078,8 +1054,8 @@ public class Father {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/String类/" target="_blank">
-                        <span class="chip bg-color">String类</span>
+                    <a href="/tags/HashMap/" target="_blank">
+                        <span class="chip bg-color">HashMap</span>
                     </a>
                     
                 </div>

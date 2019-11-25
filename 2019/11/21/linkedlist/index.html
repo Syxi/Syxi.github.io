@@ -9,10 +9,10 @@
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
     <meta name="description" content="1. LinkedList简介
-LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现List的。
+LinkedList 的底层数据结构是链表，LinkedList 是使用双链表的实现 List 的。
 
 2. LinkedList类关系图
-3. LinkedList代码分析public class LinkedLi">
+3. LinkedList代码分析public class Link">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -294,7 +294,7 @@ LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -449,7 +449,7 @@ LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    655
+                    658
                 </div>
                 
 
@@ -473,18 +473,18 @@ LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-LinkedList简介"><a href="#1-LinkedList简介" class="headerlink" title="1. LinkedList简介"></a>1. LinkedList简介</h2><blockquote>
-<p><strong>LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现List的。</strong></p>
+<p><strong>LinkedList 的底层数据结构是链表，LinkedList 是使用双链表的实现 List 的。</strong></p>
 </blockquote>
 <h2 id="2-LinkedList类关系图"><a href="#2-LinkedList类关系图" class="headerlink" title="2. LinkedList类关系图"></a>2. LinkedList类关系图</h2><p><img src="../images/LinkedList/LinkedList.png" alt="LinkedList"></p>
 <h2 id="3-LinkedList代码分析"><a href="#3-LinkedList代码分析" class="headerlink" title="3. LinkedList代码分析"></a>3. LinkedList代码分析</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
     <span class="token keyword">extends</span> <span class="token class-name">AbstractSequentialList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
     <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> Deque<span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>LinkedList继承了AbstractSequentialList是一个双向链表，可以当做队列，堆栈，或者是双端队列。</p>
-<p>实现了List接口可以有队列操作。</p>
-<p>实现了Deque接口可以有双端队列操作</p>
-<p>实现了Cloneable接口既可以用来做浅克隆</p>
-<p>实现了Serializable接口可以用来做网络传输和持久化，同时可以使用序列化来做深度克隆。</p>
+<p>LinkedList 继承了 AbstractSequentialList 是一个双向链表，可以当做队列，堆栈，或者是双端队列。</p>
+<p>实现了 List 接口可以有队列操作。</p>
+<p>实现了 Deque 接口可以有双端队列操作</p>
+<p>实现了 Cloneable 接口既可以用来做浅克隆</p>
+<p>实现了 Serializable 接口可以用来做网络传输和持久化，同时可以使用序列化来做深度克隆。</p>
 </blockquote>
 <h3 id="3-1-类的属性"><a href="#3-1-类的属性" class="headerlink" title="3.1 类的属性"></a>3.1 类的属性</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 存储元素的个数</span>
 <span class="token keyword">transient</span> <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -506,17 +506,18 @@ LinkedList的底层数据结构是链表，LinkedList是使用双链表的实现
 <blockquote>
 <p> Node 是 LInkedList 的内部类，定义了存储的数据元素，前一个节点和后一个节点，典型的双链表结构。 </p>
 </blockquote>
-<h3 id="3-3-构造方法"><a href="#3-3-构造方法" class="headerlink" title="3.3 构造方法"></a>3.3 构造方法</h3><pre><code>// 无参构造方法
-public LinkedList() {
+<h3 id="3-3-构造方法"><a href="#3-3-构造方法" class="headerlink" title="3.3 构造方法"></a>3.3 构造方法</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 无参构造方法</span>
+<span class="token keyword">public</span> <span class="token function">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-}
+<span class="token punctuation">}</span>
 
-// 有参构造方法，
-public LinkedList(Collection&lt;? extends E&gt; c) {
-    this();
-    // 将集合c所有元素插入链表中
-    addAll(c);
-}</code></pre><h2 id="4-LinkedList的主要方法"><a href="#4-LinkedList的主要方法" class="headerlink" title="4. LinkedList的主要方法"></a>4. LinkedList的主要方法</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedListTest</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// 有参构造方法，</span>
+<span class="token keyword">public</span> <span class="token function">LinkedList</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">E</span><span class="token operator">></span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 将集合 c 所有元素插入链表中</span>
+    <span class="token function">addAll</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-LinkedList的主要方法"><a href="#4-LinkedList的主要方法" class="headerlink" title="4. LinkedList的主要方法"></a>4. LinkedList的主要方法</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedListTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> l <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         l<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token string">"链头"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -526,7 +527,7 @@ public LinkedList(Collection&lt;? extends E&gt; c) {
         l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 指定链表下标index处插入</span>
+        <span class="token comment" spellcheck="true">// 指定链表下标 index 处插入</span>
         l<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         l<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         l<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -539,7 +540,7 @@ public LinkedList(Collection&lt;? extends E&gt; c) {
         k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         k<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// l集合的所有元素添加到k集合</span>
+        <span class="token comment" spellcheck="true">// l 集合的所有元素添加到 k 集合</span>
         k<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 迭代器遍历集合</span>
         ListIterator li <span class="token operator">=</span> k<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -582,11 +583,11 @@ n
 a
 y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-LinkedList总结"><a href="#5-LinkedList总结" class="headerlink" title="5. LinkedList总结"></a>5. LinkedList总结</h2><blockquote>
-<p> <strong>LinkedList是一个以双链表实现的List。</strong> </p>
-<p> <strong>LinkedList还是一个双端队列，具有队列、双端队列、栈的特性。</strong> </p>
-<p> <strong>LinkedList在首尾添加、删除元素非常高效，时间复杂度为O(1)。</strong> </p>
-<p> <strong>LinkedList在中间添加、删除元素比较低效，时间复杂度为O(n)。</strong> </p>
-<p><strong>LinkedList查询和修改慢</strong></p>
+<p> <strong>LinkedList 是一个以双链表实现的 List。</strong> </p>
+<p> <strong>LinkedList 还是一个双端队列，具有队列、双端队列、栈的特性。</strong> </p>
+<p> <strong>LinkedList 在首尾添加、删除元素非常高效，时间复杂度为 O(1)。</strong> </p>
+<p> <strong>LinkedList 在中间添加、删除元素比较低效，时间复杂度为 O(n)。</strong> </p>
+<p><strong>LinkedList 查询和修改慢</strong></p>
 <p><strong>LinkedList 线程不安全。</strong></p>
 </blockquote>
 
@@ -1081,7 +1082,7 @@ y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><s
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="ArrayList">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="ArrayList">
                         
                         <span class="card-title">ArrayList</span>
                     </div>
@@ -1134,7 +1135,7 @@ public class ArrayList&lt;E> extends AbstractList&lt;E>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java中的迭代器">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java中的迭代器">
                         
                         <span class="card-title">Java中的迭代器</span>
                     </div>
@@ -1331,7 +1332,7 @@ public class ArrayList&lt;E> extends AbstractList&lt;E>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10.4k</span>
+            <span class="white-color">11.1k</span>
             
 
             <br>

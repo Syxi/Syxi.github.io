@@ -8,11 +8,11 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1. HashMap简介
-HashMap的底层数据结构是数组 + 链表 + 红黑树
+    <meta name="description" content="1. HashMap 简介
+HashMap 的底层数据结构是数组 + 链表 + 红黑树
 
 public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
-    implements Map&amp;l">
+    implements Map">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -294,7 +294,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -472,58 +472,58 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-HashMap简介"><a href="#1-HashMap简介" class="headerlink" title="1. HashMap简介"></a>1. HashMap简介</h2><blockquote>
-<p>HashMap的底层数据结构是数组 + 链表 + 红黑树</p>
+                <h2 id="1-HashMap-简介"><a href="#1-HashMap-简介" class="headerlink" title="1. HashMap 简介"></a>1. HashMap 简介</h2><blockquote>
+<p>HashMap 的底层数据结构是数组 + 链表 + 红黑树</p>
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractMap</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span>
     <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> Serializable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/../../images/HashMap/HashMap-1574575457627.png" alt="HashMap"></p>
-<p><strong>HashMap的底层数据结构图</strong></p>
+<p><strong>HashMap 的底层数据结构图</strong></p>
 <p><img src="/../../images/HashMap/122-1574575475541.jpg" alt="122"></p>
 <blockquote>
-<p>  table数组的table[0]也叫作桶，每个桶中可以存储多个元素。数组的长度是table.length。</p>
-<p> HashMap采用Entry数组来存储key-value对，每一个键值对组成了一个Entry实体，Entry类实际上是一个单向的链表结构，它具有Next指针，可以连接下一个Entry实体，以此来解决Hash冲突的问题。  </p>
-<p>table数组的下标，是&lt; K , V&gt; 中的K的哈希值，K经过hash算法得到哈希值。但是可能存在同一hash值的元素已经被放在数组同一位置了，这时就添加到同一hash值的元素的后面，他们在数组的同一位置，但是形成了链表，同一各链表上的Hash值是相同的，所以说数组存放的是链表。而当链表长度太长时，链表就转换为红黑树，这样大大提高了查找的效率。</p>
+<p>  table 数组的 table[0] 也叫作桶，每个桶中可以存储多个元素。数组的长度是 table.length。</p>
+<p> HashMap 采用 Entry 数组来存储 key-value 对，每一个键值对组成了一个 Entry 实体，Entry 类实际上是一个单向的链表结构，它具有 Next 指针，可以连接下一个 Entry 实体，以此来解决 Hash 冲突的问题。  </p>
+<p>table 数组的下标，是 &lt; K , V&gt;  中的K的哈希值，K 经过 hash 算法得到哈希值。但是可能存在同一 hash值的元素已经被放在数组同一位置了，这时就添加到同一 hash 值的元素的后面，他们在数组的同一位置，但是形成了链表，同一各链表上的 Hash 值是相同的，所以说数组存放的是链表。而当链表长度太长时，链表就转换为红黑树，这样大大提高了查找的效率。</p>
 </blockquote>
-<p><strong>HashMap的数组 + 链表结构</strong></p>
+<p><strong>HashMap 的数组 + 链表结构</strong></p>
 <blockquote>
-<p>当桶内链表的长度小于8时，HashMap的数据结构是数组 + 单链表，table数组里的每个桶存储的是单链表数据结构的元素。</p>
+<p>当桶内链表的长度小于 8 时，HashMap 的数据结构是数组 + 单链表，table 数组里的每个桶存储的是单链表数据结构的元素。</p>
 </blockquote>
-<p><strong>HashMap的数组 + 红黑树结构</strong></p>
+<p><strong>HashMap 的数组 + 红黑树结构</strong></p>
 <blockquote>
-<p>桶内链表的长度大于8，HashMap的查询效率变低。当HashMap的链表长度大于8时，需要把HashMap的链表数据结构转换成红黑树。</p>
+<p>桶内链表的长度大于 8，HashMap 的查询效率变低。当 HashMap 的链表长度大于 8 时，需要把HashMap 的链表数据结构转换成红黑树。</p>
 </blockquote>
-<h2 id="2-存储元素put"><a href="#2-存储元素put" class="headerlink" title="2.存储元素put"></a><strong>2.存储元素put</strong></h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">{</span>
+<h2 id="2-存储元素-put"><a href="#2-存储元素-put" class="headerlink" title="2.存储元素 put"></a><strong>2.存储元素 put</strong></h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"good"</span><span class="token punctuation">,</span> <span class="token string">"苏小彦"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p> 在这里HashMap&lt;String, String&gt;，第一个参数是键，第二个参数是值，合起来叫做键值对。存储的时候只需要调用put方法即可。那底层的实现原理是怎么样的呢？这里还是先给出一个流程图 。</p>
+<p> 在这里 HashMap&lt;String, String&gt;，第一个参数是键，第二个参数是值，合起来叫做键值对。存储的时候只需要调用 put 方法即可。那底层的实现原理是怎么样的呢？这里还是先给出一个流程图 。</p>
 </blockquote>
 <p><img src="/../../images/HashMap/4-1574575509271.jpg" alt="4"></p>
 <blockquote>
 <p><strong>执行流程：</strong></p>
-<p>（1）第一步：调用put方法传入键值对</p>
-<p>（2）第二步：使用hash算法计算hash值</p>
-<p>（3）第三步：根据hash值确定存放的位置，判断是否和其他键值对位置发生了冲突</p>
+<p>（1）第一步：调用 put 方法传入键值对</p>
+<p>（2）第二步：使用 hash 算法计算 hash 值</p>
+<p>（3）第三步：根据 hash 值确定存放的位置，判断是否和其他键值对位置发生了冲突</p>
 <p>（4）第四步：若没有发生冲突，直接存放在数组中即可</p>
 <p>（5）第五步：若发生了冲突，还要判断此时的数据结构是什么？</p>
 <p>（6）第六步：若此时的数据结构是红黑树，那就直接插入红黑树中</p>
-<p>（7）第七步：若此时的数据结构是链表，判断插入之后是否大于等于8</p>
-<p>（8）第八步：插入之后大于8了，就要先调整为红黑树，在插入</p>
-<p>（9）第九步：插入之后不大于8，那么就直接插入到链表尾部即可。</p>
+<p>（7）第七步：若此时的数据结构是链表，判断插入之后是否大于等于 8</p>
+<p>（8）第八步：插入之后大于 8 了，就要先调整为红黑树，在插入</p>
+<p>（9）第九步：插入之后不大于 8，那么就直接插入到链表尾部即可。</p>
 </blockquote>
 <h2 id="3-HashMap的扩容"><a href="#3-HashMap的扩容" class="headerlink" title="3. HashMap的扩容"></a>3. HashMap的扩容</h2><blockquote>
-<p>HashMap的默认初始容量为16（1&lt;&lt;4），默认装载因子为0.75f，容量总是2的n次方。 为什么扩容呢？很明显就是当前容量不够，也就是put了太多的元素。为此我们还是先给出一个流程图，再来进行分析。 </p>
+<p>HashMap 的默认初始容量为 16（1&lt;&lt;4），默认装载因子为 0.75f，容量总是 2 的 n 次方。 为什么扩容呢？很明显就是当前容量不够，也就是 put 了太多的元素。为此我们还是先给出一个流程图，再来进行分析。 </p>
 </blockquote>
 <p><img src="/../../images/HashMap/5-1574575525389.jpg" alt="5"></p>
 <blockquote>
-<p> 这个扩容就比较简单了，HaspMap扩容就是就是先计算 新的hash表容量和新的容量阀值，然后初始化一个新的hash表，将旧的键值对重新映射在新的hash表里。如果在旧的hash表里涉及到红黑树，那么在映射到新的hash表中还涉及到红黑树的拆分。 </p>
+<p> 这个扩容就比较简单了，HaspMap 扩容就是就是先计算 新的 hash 表容量和新的容量阀值，然后初始化一个新的 hash 表，将旧的键值对重新映射在新的 hash 表里。如果在旧的 hash 表里涉及到红黑树，那么在映射到新的 hash 表中还涉及到红黑树的拆分。 </p>
 </blockquote>
 <h2 id="4-HashMap常用方法"><a href="#4-HashMap常用方法" class="headerlink" title="4. HashMap常用方法"></a>4. HashMap常用方法</h2><blockquote>
-<p><strong>遍历集合方式一：Map中的keySet()返回的是一个包含所有键的Set类型的对象，通过键获取值</strong></p>
+<p><strong>遍历集合方式一：Map 中的 keySet() 返回的是一个包含所有键的 Set 类型的对象，通过键获取值</strong></p>
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -542,7 +542,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token string">"测试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 删除集合中的键</span>
         map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 获取map的大小</span>
+        <span class="token comment" spellcheck="true">// 获取 map 的大小</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素个数："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"白石麻衣"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素个数："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -552,19 +552,19 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token string">"白石麻衣"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token string">"三吉彩花"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 遍历集合方式一：Map中的keySet()返回的是一个包含所有键的Set类型的对象，通过键获取值</span>
-        <span class="token comment" spellcheck="true">// 使用迭代器遍历，将map中的所有健返回给set</span>
+        <span class="token comment" spellcheck="true">// 遍历集合方式一：Map 中的 keySet() 返回的是一个包含所有键的 Set 类型的对象，通过键获取值</span>
+        <span class="token comment" spellcheck="true">// 使用迭代器遍历，将 map 中的所有健返回给 set</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"迭代器遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Set<span class="token operator">&lt;</span>Integer<span class="token operator">></span> keySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 遍历Set获取键，根据键获取值</span>
+        <span class="token comment" spellcheck="true">// 遍历 Set 获取键，根据键获取值</span>
         Iterator<span class="token operator">&lt;</span>Integer<span class="token operator">></span> iter <span class="token operator">=</span> keySet<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Integer key <span class="token operator">=</span> iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键: "</span> <span class="token operator">+</span> key <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> <span class="token string">"值: "</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-        <span class="token comment" spellcheck="true">// 使用增强for循环遍历</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"增强for循环遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 使用增强 for 循环遍历</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"增强 for 循环遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span> Integer key <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键: "</span> <span class="token operator">+</span> key <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> <span class="token string">"值: "</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -591,7 +591,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
 键<span class="token operator">:</span> <span class="token number">7</span>  值<span class="token operator">:</span> 苏见
 键<span class="token operator">:</span> <span class="token number">8</span>  值<span class="token operator">:</span> 三吉彩花
 键<span class="token operator">:</span> <span class="token number">9</span>  值<span class="token operator">:</span> 新木优子
-增强<span class="token keyword">for</span>循环遍历集合：
+增强 <span class="token keyword">for</span> 循环遍历集合：
 键<span class="token operator">:</span> <span class="token number">0</span>  值<span class="token operator">:</span> 苏小彦
 键<span class="token operator">:</span> <span class="token number">1</span>  值<span class="token operator">:</span> 苏人
 键<span class="token operator">:</span> <span class="token number">2</span>  值<span class="token operator">:</span> 苏生
@@ -603,7 +603,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
 键<span class="token operator">:</span> <span class="token number">8</span>  值<span class="token operator">:</span> 三吉彩花
 键<span class="token operator">:</span> <span class="token number">9</span>  值<span class="token operator">:</span> 新木优子<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p> <strong>方式二：Map中的键和值被封装成了Entry对象,并存储在Set集合中，通过entrySet()可以获取到这个Set集合。</strong> </p>
+<p> <strong>方式二：Map 中的键和值被封装成了 Entry 对象,并存储在 Set 集合中，通过 entrySet() 可以获取到这个 Set 集合。</strong> </p>
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -622,7 +622,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token string">"测试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 删除集合中的键</span>
         map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 获取map的大小</span>
+        <span class="token comment" spellcheck="true">// 获取 map 的大小</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素个数："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"白石麻衣"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素个数："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -632,13 +632,13 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token string">"白石麻衣"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token string">"三吉彩花"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 使用迭代器遍历，将map中的所有健返回给set</span>
+        <span class="token comment" spellcheck="true">// 使用迭代器遍历，将 map 中的所有健返回给 set</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"迭代器遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 键值对封装成Entry对象，并存储在set集合中</span>
+        <span class="token comment" spellcheck="true">// 键值对封装成 Entry 对象，并存储在 set 集合中</span>
         Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">>></span> entrySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Iterator<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">>></span> iter <span class="token operator">=</span> entrySet<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 获取每一个Entry对象</span>
+            <span class="token comment" spellcheck="true">// 获取每一个 Entry 对象</span>
             Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">></span> entry <span class="token operator">=</span> iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token comment" spellcheck="true">// 根据键值对对象获取键</span>
             Integer key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -647,7 +647,7 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键: "</span> <span class="token operator">+</span> key <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> <span class="token string">"值: "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-        <span class="token comment" spellcheck="true">// 使用增强for循环遍历</span>
+        <span class="token comment" spellcheck="true">// 使用增强 for 循环遍历</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"增强for循环遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">></span> entry <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键: "</span> <span class="token operator">+</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> <span class="token string">"值: "</span> <span class="token operator">+</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -659,14 +659,14 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-HashMap总结"><a href="#5-HashMap总结" class="headerlink" title="5. HashMap总结"></a>5. HashMap总结</h2><blockquote>
-<p>（1）HashMap是一种散列表，采用（数组 + 链表 + 红黑树）的存储结构；</p>
-<p>（2）HashMap的默认初始容量为16（1&lt;&lt;4），默认装载因子为0.75f，容量总是2的n次方；</p>
-<p>（3）HashMap扩容时每次容量变为原来的两倍；</p>
-<p>（4）当桶的数量小于64时不会进行树化，只会扩容；</p>
-<p>（5）当桶的数量大于64且单个桶中元素的数量大于8时，进行树化；</p>
-<p>（6）当单个桶中元素数量小于6时，进行反树化；</p>
-<p>（7）HashMap是非线程安全的容器；</p>
-<p>（8）HashMap查找添加元素的时间复杂度都为O(1)；</p>
+<p>（1）HashMap 是一种散列表，采用（数组 + 链表 + 红黑树）的存储结构；</p>
+<p>（2）HashMap 的默认初始容量为16（1&lt;&lt;4），默认装载因子为 0.75f，容量总是 2 的 n 次方；</p>
+<p>（3）HashMap 扩容时每次容量变为原来的两倍；</p>
+<p>（4）当桶的数量小于 64 时不会进行树化，只会扩容；</p>
+<p>（5）当桶的数量大于 64 且单个桶中元素的数量大于 8 时，进行树化；</p>
+<p>（6）当单个桶中元素数量小于 6 时，进行反树化；</p>
+<p>（7）HashMap 是非线程安全的容器；</p>
+<p>（8）HashMap 查找添加元素的时间复杂度都为 O(1)；</p>
 </blockquote>
 
             </div>
@@ -1152,34 +1152,32 @@ public class HashMap&amp;lt;K,V&gt; extends AbstractMap&amp;lt;K,V&gt;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/23/hashmap/">
+                <a href="/2019/11/25/collection/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="HashMap">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Collection">
                         
-                        <span class="card-title">HashMap</span>
+                        <span class="card-title">Collection</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. HashMap简介
-HashMap的底层数据结构是数组 + 链表 + 红黑树
+                            1. Collection简介
+Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。
 
-public class HashMap&lt;K,V> extends AbstractMap&lt;K,V>
-    implements Map&l
+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1192,12 +1190,11 @@ public class HashMap&lt;K,V> extends AbstractMap&lt;K,V>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HashMap/" target="_blank">
-                        <span class="chip bg-color">HashMap</span>
+                    <a href="/tags/Collection概述/" target="_blank">
+                        <span class="chip bg-color">Collection概述</span>
                     </a>
                     
                 </div>
@@ -1215,7 +1212,7 @@ public class HashMap&lt;K,V> extends AbstractMap&lt;K,V>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="ArrayList">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="ArrayList">
                         
                         <span class="card-title">ArrayList</span>
                     </div>
@@ -1412,7 +1409,7 @@ public class ArrayList&lt;E> extends AbstractList&lt;E>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10.4k</span>
+            <span class="white-color">11.1k</span>
             
 
             <br>

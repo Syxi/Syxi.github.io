@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -446,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    791
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
                 
@@ -513,14 +513,14 @@ we <span class="token number">199</span> i
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Value</span><span class="token punctuation">{</span>
 
-    <span class="token comment" spellcheck="true">// 这是一个泛型方法 &lt;T>是定义泛型方法，T是方法返回值</span>
+    <span class="token comment" spellcheck="true">// 这是一个泛型方法 &lt;T> 是定义泛型方法，T 是方法返回值</span>
     <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> T <span class="token function">showValue1</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是泛型方法"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> t<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">// 静态方法需要定义成泛型方法，在类中要特定的声明，</span>
-    <span class="token comment" spellcheck="true">// 即泛型类的数据类型形参是T，静态方法不可以同样声明T。</span>
+    <span class="token comment" spellcheck="true">// 即泛型类的数据类型形参是 T，静态方法不可以同样声明 T。</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>S<span class="token operator">></span> <span class="token keyword">void</span> <span class="token function">showValue2</span><span class="token punctuation">(</span>S s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是静态泛型方法"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -535,16 +535,69 @@ we <span class="token number">199</span> i
 结果：
 这是泛型方法 <span class="token number">520</span>
 这是静态泛型方法 小幸运<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-泛型通配符"><a href="#3-泛型通配符" class="headerlink" title="3.泛型通配符"></a>3.泛型通配符</h2><ul>
-<li>&lt;? extends T&gt;：是指 <strong>“上界通配符（Upper Bounds Wildcards）”</strong></li>
-<li>&lt;? super T&gt;：是指 <strong>“下界通配符（Lower Bounds Wildcards）”</strong></li>
-</ul>
+<h2 id="3-泛型通配符"><a href="#3-泛型通配符" class="headerlink" title="3.泛型通配符"></a>3.泛型通配符</h2><blockquote>
+<p><strong>&lt;? extends T&gt;：</strong>可以赋值给任何 T 及 T 子类的集合，上界为 T 。取出来的类型带有泛型限制，向上强转型为T。</p>
+<p>add() 方法：null 可以表示任何类型，所有除 null 外，任何元素都不得添加进 &lt;? extends T&gt; 集合内</p>
+<p>get() 方法：&lt;? extends T&gt; 可以返回带类型的元素，但是只能返回 T 自身及其父类的对象，因为子类类型被擦除了。</p>
+</blockquote>
+<blockquote>
+<p><strong>&lt;? super T&gt;：</strong>可以赋值给任何 T 及 T 的父类集合，下界为 T 。</p>
+<p>add () 方法：只能在 &lt;? super T&gt; 集合内添加元素，但只能添加 T 自身及子类对象。</p>
+<p>get() 方法：执行 get  取数据时候，虽然能够返回元素，但是类型丢失，即只能返回 Object 对象。</p>
+</blockquote>
 <blockquote>
 <ol>
-<li><strong>频繁往外读取内容的，适合用上界Extends。</strong></li>
-<li><strong>经常往里插入的，适合用下界Super。</strong></li>
+<li><strong>频繁往外读取内容的，适合用上界 &lt;? extends T&gt;。</strong> （进行 add 操作，编译出错）</li>
+<li><strong>经常往里插入的，适合用下界 &lt;? super T&gt;。</strong> （进行 get 操作，编译出错）</li>
 </ol>
 </blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 用Human、Father与Son的继承关系，说明extends与super在集合的意义。</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 声明三个依次继承类的集合：Human > Father > Son</span>
+        List<span class="token operator">&lt;</span>Human<span class="token operator">></span> human <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Human<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Father<span class="token operator">></span> father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Father<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Son<span class="token operator">></span> son <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Son<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        human<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Human</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        father<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        son<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">// 测试赋值操作</span>
+        <span class="token comment" spellcheck="true">// 下一行编译出错，只能赋值 Father 或 Father 子类的集合</span>
+        <span class="token comment" spellcheck="true">// List&lt;? extends Father> extendsFatherFromHuman = human;</span>
+        List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token operator">></span> extendsFatherFromFather <span class="token operator">=</span> father<span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token operator">></span> extendsFatherFromSon <span class="token operator">=</span> son<span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Father<span class="token operator">></span> superFatherFormHuman <span class="token operator">=</span> human<span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Father<span class="token operator">></span> superFatherFormFather <span class="token operator">=</span> father<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 下一行编译出错，只能赋值 Father 或 Father 父类的集合</span>
+        <span class="token comment" spellcheck="true">// List&lt;? super Father> superFatherFormSon = son;</span>
+
+
+        <span class="token comment" spellcheck="true">// 测试 add 方法</span>
+        <span class="token comment" spellcheck="true">// 下面三行中的所有的 &lt;? extends T> 都无法进行 add 操作，编译均出错</span>
+        <span class="token comment" spellcheck="true">// extendsFatherFromFather.add(new Human());</span>
+        <span class="token comment" spellcheck="true">// extendsFatherFromFather.add(new Father());</span>
+        <span class="token comment" spellcheck="true">// extendsFatherFromFather.add(new Son());</span>
+
+        <span class="token comment" spellcheck="true">// 下一行出错，只能增加 Cat 或 Cat 子类的集合</span>
+        <span class="token comment" spellcheck="true">// superFatherFormFather.add(new Human());</span>
+        superFatherFormFather<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        superFatherFormFather<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">// 测试 get 方法</span>
+        <span class="token comment" spellcheck="true">// 所有的 supper 操作能够返回元素，但是泛型丢失，只能返回 Object 对象</span>
+
+        <span class="token comment" spellcheck="true">// extends 操作能够返回元素</span>
+        Object fatherExtend2 <span class="token operator">=</span> extendsFatherFromFather<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Father fatherExtend1 <span class="token operator">=</span> extendsFatherFromFather<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 编译出错，虽然 Father 集合从 Son 赋值而来，但类型擦除后，是不知道的</span>
+        <span class="token comment" spellcheck="true">// Son son1 = extendsFatherFromSon.get(0);</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1037,7 +1090,7 @@ we <span class="token number">199</span> i
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="多态">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="多态">
                         
                         <span class="card-title">多态</span>
                     </div>
@@ -1087,7 +1140,7 @@ we <span class="token number">199</span> i
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="类">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="类">
                         
                         <span class="card-title">类</span>
                     </div>
@@ -1287,7 +1340,7 @@ we <span class="token number">199</span> i
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10.4k</span>
+            <span class="white-color">11.1k</span>
             
 
             <br>

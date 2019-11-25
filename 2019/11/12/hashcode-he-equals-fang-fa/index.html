@@ -8,12 +8,10 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.Object类之equals方法 Java源码里面Object中的equals方法: 
+    <meta name="description" content="1.Object类之equals方法 Java 源码里面 Object 中的 equals 方法: 
  public boolean equals(Object obj) {
         return (this == obj);
-    }
-
-">
+  ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -295,7 +293,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    652
+                    663
                 </div>
                 
 
@@ -473,13 +471,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Object类之equals方法"><a href="#1-Object类之equals方法" class="headerlink" title="1.Object类之equals方法"></a>1.Object类之equals方法</h3><p> Java源码里面Object中的equals方法: </p>
+                <h3 id="1-Object类之equals方法"><a href="#1-Object类之equals方法" class="headerlink" title="1.Object类之equals方法"></a>1.Object类之equals方法</h3><p> Java 源码里面 Object 中的 equals 方法: </p>
 <pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p> Object中的equals方法比较的是两个引用的内存地址。但是在现实的业务逻辑当中，不应该比较内存地址，应该比较地址里面的内容，所以需要对equals方法进行重写。 </p>
-<p> <strong>注意：在使用自己创建的类进行equals比较时，一定要先重写equals方法</strong> </p>
+<p> Object 中的 equals 方法比较的是两个引用的内存地址。但是在现实的业务逻辑当中，不应该比较内存地址，应该比较地址里面的内容，所以需要对 equals 方法进行重写。 </p>
+<p> <strong>注意：在使用自己创建的类进行 equals 比较时，一定要先重写 equals 方法</strong> </p>
 </blockquote>
 <h3 id="1-1-equals代码测试"><a href="#1-1-equals代码测试" class="headerlink" title="1.1 equals代码测试"></a>1.1 equals代码测试</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -501,12 +499,12 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 创建一个Object型的对象</span>
+        <span class="token comment" spellcheck="true">// 创建一个 Object 型的对象</span>
         Object o1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Object o2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>o2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 堆地址不一样</span>
 
-        <span class="token comment" spellcheck="true">// 创建一个Person对象</span>
+        <span class="token comment" spellcheck="true">// 创建一个 Person 对象</span>
         Person p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Person p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Person p3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏小彦"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -521,33 +519,33 @@
 Process finished with exit code <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-equals方法总结"><a href="#1-3-equals方法总结" class="headerlink" title="1.3 equals方法总结"></a>1.3 equals方法总结</h3><blockquote>
 <ul>
-<li><strong>Object中的equals方法比较的是两个引用的内存地址</strong> </li>
+<li><strong>Object 中的 equals 方法比较的是两个引用的内存地址</strong> </li>
 </ul>
 <ul>
-<li><strong>重写了Object类中的equals方法，比较的是对象的内容</strong> </li>
+<li><strong>重写了 Object 类中的 equals 方法，比较的是对象的内容</strong> </li>
 </ul>
 <ul>
-<li><strong>比较两个String类型时，不能使用==，要使用equals方法，String已经重写了Object中的equals方法，比较的是内容。</strong> </li>
+<li><strong>比较两个 String 类型时，不能使用 ==，要使用 equals 方法，String 已经重写了 Object 中的equals 方法，比较的是内容。</strong> </li>
 </ul>
 <ul>
-<li><strong>== 两边如果是引用类型，则比较内存地址，地址相同则是true,反之则false.</strong> </li>
+<li><strong>== 两边如果是引用类型，则比较内存地址，地址相同则是 true,反之则 false.</strong> </li>
 </ul>
 </blockquote>
 <h2 id="2-hashCode和equals"><a href="#2-hashCode和equals" class="headerlink" title="2. hashCode和equals"></a>2. hashCode和equals</h2><blockquote>
-<p>hashCode和equals用来标识对象，两个方法协同工作可用来判断两个对象是否相等。众所周知，根据生成的哈希将数据离散开来，可以使存储元素更快。对象通过调用Object.hashCode()生成哈希值；由于不可避免地会存在哈希值冲突的情况，因此当hashCode相同时，还需要调用equals进行一次值的比较；但是，若hsahCode不相同，将直接判定Object不同，跳过equals，这加快了冲突处理效率。</p>
+<p>hashCode 和 equals 用来标识对象，两个方法协同工作可用来判断两个对象是否相等。众所周知，根据生成的哈希将数据离散开来，可以使存储元素更快。对象通过调用 Object.hashCode() 生成哈希值；由于不可避免地会存在哈希值冲突的情况，因此当 hashCode 相同时，还需要调用 equals 进行一次值的比较；但是，若 hsahCode 不相同，将直接判定 Object 不同，跳过 equals，这加快了冲突处理效率。</p>
 </blockquote>
 <blockquote>
-<p><strong>Object类定义中对hashCode和equals的要求：</strong></p>
-<p>（1）如果两个对象的equals的结果是相等的，则两个对象的hashCode的返回结果也必须是相同的。</p>
-<p>（2）任何时候覆写equals，都必须同时覆写hashCode。</p>
+<p><strong>Object 类定义中对 hashCode 和 equals 的要求：</strong></p>
+<p>（1）如果两个对象的 equals 的结果是相等的，则两个对象的 hashCode 的返回结果也必须是相同的。</p>
+<p>（2）任何时候覆写 equals，都必须同时覆写 hashCode。</p>
 </blockquote>
 <blockquote>
-<p>在Map和Set类集合中，用到这两个方法时，首先判断hashCode的值，如果hash相等，则再判断equals的结果。</p>
+<p>在 Map 和 Set 类集合中，用到这两个方法时，首先判断 hashCode 的值，如果 hash 相等，则再判断equals的结果。</p>
 </blockquote>
 <blockquote>
 <pre><code>if (e.hash == hash &amp;&amp; ((k = e.key == key) || (key != null &amp;&amp; key.equals(k))))
     return (e = getNode(hash(key),key)) == null ? null : e.value;
-    如果hash相等，则再判断((k = e.key == key) || (key != null &amp;&amp; key.equals(k)))</code></pre></blockquote>
+    如果 hash 相等，则再判断((k = e.key == key) || (key != null &amp;&amp; key.equals(k)))</code></pre></blockquote>
 
             </div>
             <hr />
@@ -1040,7 +1038,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java中的迭代器">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java中的迭代器">
                         
                         <span class="card-title">Java中的迭代器</span>
                     </div>
@@ -1093,7 +1091,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Object类">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Object类">
                         
                         <span class="card-title">Object类</span>
                     </div>
@@ -1102,9 +1100,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
                     <div class="summary block-with-text">
                         
                             1.Object类
- Object类是所有类的父类,即每个类都直接或间接继承自该类。所以一个Object类型的变量可以引用任何对象,不论是类实例还是数组。  在不明确给出父类的情况下,Java会自动把Object作为要定义类的父类。 
-
-2
+ Object 类是所有类的父类,即每个类都直接或间接继承自该类。所以一个 Object 类型的变量可以引用任何对象,不论是类实例还是数组。  在不明确给出父类的情况下, Java 会自动把 Object 作为要定义类的
                         
                     </div>
                     <div class="publish-info">
@@ -1289,7 +1285,7 @@ Process finished with exit code <span class="token number">0</span><span aria-hi
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10.4k</span>
+            <span class="white-color">11.1k</span>
             
 
             <br>
