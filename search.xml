@@ -8,7 +8,7 @@
       <link href="/2019/11/25/collection/"/>
       <url>/2019/11/25/collection/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-Collection简介"><a href="#1-Collection简介" class="headerlink" title="1. Collection简介"></a>1. Collection简介</h2><blockquote><p>Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-Collection-简介"><a href="#1-Collection-简介" class="headerlink" title="1. Collection 简介"></a>1. Collection 简介</h2><blockquote><p>Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。</p></blockquote><p><strong>按照单个元素存储的 Collection</strong></p><p><img src="/../../images/Collection/SS.jpg" alt></p><blockquote><p>Collection 接口是 List、Set、Queue 的父接口。</p><p> List：里面存放的数据是有顺序的，可以存放重复的数据。 </p><p> Set：里面存放的数据是没有顺序的，不能存放重复的数据。 </p><p> Queue：是一个队列，里面的数据是先进先出，可以存放重复的数据。</p><p>  Deque：是 Queue 的子接口，表示双端队列，即两端（队尾和队首）都能插入和删除的特殊队列。</p><p>  HashSet：是按照 hash 算法来存储元素的，因此具有很好的存取和查找性能。 </p><p> TreeSet：可以保证元素处于排序状态，它采用红黑树的数据结构来存储集合元素。TreeSet 支持两种排序方法：自然排序和定制排序，默认采用自然排序。 </p></blockquote><p><strong>按照 Key-Value 存储的 Map</strong></p><p><img src="/../../images/Collection/dd.jpg" alt="dd"></p><blockquote><p>Map 集合是以 Key-Value 键值对作为存储元素实现的哈希结构。Key 按照某种哈希函数计算后是唯一的，Value 则是可以重复的。</p></blockquote>]]></content>
       
       
       <categories>
@@ -20,7 +20,7 @@
       
         <tags>
             
-            <tag> Collection概述 </tag>
+            <tag> Collection 概述 </tag>
             
         </tags>
       
