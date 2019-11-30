@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://goodboysuyan.ltd/"/>
-  <updated>2019-11-30T11:59:34.026Z</updated>
+  <updated>2019-11-30T15:18:48.510Z</updated>
   <id>https://goodboysuyan.ltd/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/30/maven/"/>
     <id>https://goodboysuyan.ltd/2019/11/30/maven/</id>
     <published>2019-11-30T04:03:27.000Z</published>
-    <updated>2019-11-30T11:59:34.026Z</updated>
+    <updated>2019-11-30T15:18:48.510Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,8 @@
       
         
         
-          &lt;p&gt;##1.  Maven 是什么？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Maven 就是项目构建管理工具，它能够方便地帮助我们构建和管理项目。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Maven 的主要组成：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img
+          &lt;h2 id=&quot;1-Maven-是什么？&quot;&gt;&lt;a href=&quot;#1-Maven-是什么？&quot; class=&quot;headerlink&quot; title=&quot;1.  Maven 是什么？&quot;&gt;&lt;/a&gt;1.  Maven 是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Maven
         
       
     
@@ -52,7 +48,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/25/collection/"/>
     <id>https://goodboysuyan.ltd/2019/11/25/collection/</id>
     <published>2019-11-25T08:02:09.000Z</published>
-    <updated>2019-11-27T14:24:28.377Z</updated>
+    <updated>2019-11-30T12:08:32.190Z</updated>
     
     <summary type="html">
     
@@ -78,7 +74,7 @@
     <link href="https://goodboysuyan.ltd/2019/11/23/hashmap/"/>
     <id>https://goodboysuyan.ltd/2019/11/23/hashmap/</id>
     <published>2019-11-23T07:45:54.000Z</published>
-    <updated>2019-11-25T18:59:54.703Z</updated>
+    <updated>2019-11-30T12:11:15.984Z</updated>
     
     <summary type="html">
     
