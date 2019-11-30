@@ -4,15 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java中的迭代器, 师大">
+    <meta name="keywords" content="Maven, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.Iterator
-  迭代器是一种模式、详细可见其设计模式，可以使得序列类型的数据结构的遍历行为与被遍历的对象分离，即我们无需关心该序列的底层结构是什么样子的。只要拿到这个对象,使用迭代器就可以遍历这个对象的内部。  
+    <meta name="description" content="##1.  Maven 是什么？
 
-2.语法结构
-">
+Maven 就是项目构建管理工具，它能够方便地帮助我们构建和管理项目。
+
+Maven 的主要组成：
+
+2. Lifecycle是什么？">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java中的迭代器 | 苏彦的博客</title>
+    <title>Maven | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -294,13 +296,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java中的迭代器
+                        Maven
                     </div>
                 </div>
             </div>
@@ -411,8 +413,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Iterator和ListIterator/" target="_blank">
-                            <span class="chip bg-color">Iterator和ListIterator</span>
+                        <a href="/tags/Maven/" target="_blank">
+                            <span class="chip bg-color">Maven</span>
                         </a>
                         
                     </div>
@@ -423,8 +425,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java集合/" class="post-category" target="_blank">
-                            Java集合
+                        <a href="/categories/Maven/" class="post-category" target="_blank">
+                            Maven
                         </a>
                         
                     </div>
@@ -435,7 +437,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-13
+                    2019-11-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +451,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    913
+                    44
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -472,115 +474,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Iterator"><a href="#1-Iterator" class="headerlink" title="1.Iterator"></a>1.Iterator</h2><blockquote>
-<p>  迭代器是一种模式、详细可见其设计模式，可以使得序列类型的数据结构的遍历行为与被遍历的对象分离，即我们无需关心该序列的底层结构是什么样子的。只要拿到这个对象,使用迭代器就可以遍历这个对象的内部。  </p>
+                <p>##1.  Maven 是什么？</p>
+<blockquote>
+<p>Maven 就是项目构建管理工具，它能够方便地帮助我们构建和管理项目。</p>
 </blockquote>
-<h2 id="2-语法结构"><a href="#2-语法结构" class="headerlink" title="2.语法结构"></a>2.语法结构</h2><blockquote>
-<pre><code>Ierator&lt;类型&gt; 迭代器名 = 集合名.iterator(); // 创建迭代器
-while(迭代器名.hasNext()) {
-    语句
-}</code></pre><h2 id="3-Iterator接口源码"><a href="#3-Iterator接口源码" class="headerlink" title="3.Iterator接口源码"></a>3.Iterator接口源码</h2></blockquote>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Iterator</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
-<span class="token keyword">boolean</span> <span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果迭代器指向位置后面还有元素，则返回 true，否则返回 false</span>
-<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 返回集合中 Iterator 指向位置后面的元素</span>
-<span class="token comment" spellcheck="true">// 删除集合中 Iterator 指向位置后面的元素</span>
-<span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">UnsupportedOperationException</span><span class="token punctuation">(</span><span class="token string">"remove"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-Iterator实例代码"><a href="#4-Iterator实例代码" class="headerlink" title="4.Iterator实例代码"></a>4.Iterator实例代码</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 创建集合</span>
-        ArrayList<span class="token operator">&lt;</span>Person<span class="token operator">></span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 添加对象</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏小彦"</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏大彦"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏好彦"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"遍历集合："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 创建迭代器</span>
-        Iterator iter <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 遍历</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           <span class="token comment" spellcheck="true">// 向下转型</span>
-            Person temp <span class="token operator">=</span> <span class="token punctuation">(</span>Person<span class="token punctuation">)</span>iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> temp<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-遍历集合：
-苏彦 <span class="token number">20</span>
-苏小彦 <span class="token number">21</span>
-苏大彦 <span class="token number">22</span>
-苏好彦 <span class="token number">23</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="5-Iterator总结"><a href="#5-Iterator总结" class="headerlink" title="5.Iterator总结"></a>5.Iterator总结</h2><blockquote>
-<ul>
-<li>Iterator 只能单向移动。 </li>
-<li>不可以在迭代的时候进行集合元素（指的一整个对象元素，不是指对象的属性）的删除和插入，如果想删除元素有一个办法，用迭代器的remove方法删除，但是绝不能插入，直接报错。 </li>
-</ul>
-</blockquote>
-<h2 id="6-ListIterator"><a href="#6-ListIterator" class="headerlink" title="6.ListIterator"></a>6.ListIterator</h2><p> ListIterator 是一个功能更加强大的, 它继承于 Iterator 接口,只能用于各种 List 类型的访问。 </p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ListIterator</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Iterator</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 以正向遍历列表时，如果列表迭代器后面还有元素，则返回 true，否则返回 false</span>
-    <span class="token keyword">boolean</span> <span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 返回列表中ListIterator指向位置后面的元素</span>
-    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 如果以逆向遍历列表，列表迭代器前面还有元素，则返回 true，否则返回 false</span>
-    <span class="token keyword">boolean</span> <span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 返回列表中 ListIterator 指向位置前面的元素</span>
-    <span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 返回列表中 ListIterator 所需位置后面元素的索引</span>
-    <span class="token keyword">int</span> <span class="token function">nextIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 返回列表中 ListIterator 所需位置前面元素的索引</span>
-    <span class="token keyword">int</span> <span class="token function">previousIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/* 从列表中删除 next() 或 previous() 返回的最后一个元素（有点拗口，
-    意思就是对迭代器使用 hasNext()方法时，删除 ListIterator 指向位置后面的元素；
-    当对迭代器使用 hasPrevious() 方法时，删除 ListIterator 指向位置前面的元素）*/</span>
-    <span class="token keyword">void</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 从列表中将 next() 或 previous() 返回的最后一个元素返回的最后一个元素更改为指定元素 e</span>
-    <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 将指定的元素插入列表，插入位置为迭代器当前位置之前</span>
-     <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="7-Listiterator代码实例"><a href="#7-Listiterator代码实例" class="headerlink" title="7.Listiterator代码实例"></a>7.Listiterator代码实例</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonTest</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 创建集合</span>
-        ArrayList<span class="token operator">&lt;</span>Person<span class="token operator">></span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 添加对象</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏彦"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏小彦"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏大彦"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"苏好彦"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 创建迭代器</span>
-        ListIterator li <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从前往后输出："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 单向从前到后遍历</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Person temp1 <span class="token operator">=</span> <span class="token punctuation">(</span>Person<span class="token punctuation">)</span>li<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 向下转型</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> temp1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从后往前输出："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 可以双向遍历，但是一定要先进行由前往后输出，之后才能进行由后往前的输出</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>li<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Person temp2 <span class="token operator">=</span> <span class="token punctuation">(</span>Person<span class="token punctuation">)</span> li<span class="token punctuation">.</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>  <span class="token string">" "</span> <span class="token operator">+</span> temp2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-从前往后输出：
-苏彦 <span class="token number">20</span>
-苏小彦 <span class="token number">21</span>
-苏大彦 <span class="token number">22</span>
-苏好彦 <span class="token number">23</span>
-从后往前输出：
-苏好彦 <span class="token number">23</span>
-苏大彦 <span class="token number">22</span>
-苏小彦 <span class="token number">21</span>
-苏彦 <span class="token number">20</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p><strong>Maven 的主要组成：</strong></p>
+<p><img src="/../../images/Maven/%E7%BB%98%E5%9B%BE1-1575115155947.png" alt="绘图1"></p>
+<h2 id="2-Lifecycle是什么？"><a href="#2-Lifecycle是什么？" class="headerlink" title="2. Lifecycle是什么？"></a>2. Lifecycle是什么？</h2>
             </div>
             <hr />
 
@@ -738,9 +638,9 @@ while(迭代器名.hasNext()) {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java中的迭代器》
+                    《Maven》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/13/java-zhong-de-die-dai-qi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/30/maven/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -781,7 +681,7 @@ while(迭代器名.hasNext()) {
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/13/java-zhong-de-die-dai-qi/',
+        id: '2019/11/30/maven/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1064,33 +964,89 @@ while(迭代器名.hasNext()) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/21/linkedlist/">
+                <a href="/2019/11/30/maven/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="LinkedList">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Maven">
                         
-                        <span class="card-title">LinkedList</span>
+                        <span class="card-title">Maven</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. LinkedList简介
-LinkedList 的底层数据结构是链表，LinkedList 是使用双链表的实现 List 的。
+                            ##1.  Maven 是什么？
 
-2. LinkedList类关系图
-3. LinkedList代码分析public class Link
+Maven 就是项目构建管理工具，它能够方便地帮助我们构建和管理项目。
+
+Maven 的主要组成：
+
+2. Lifecycle是什么？
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-21
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Maven/" class="post-category" target="_blank">
+                                    Maven
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Maven/" target="_blank">
+                        <span class="chip bg-color">Maven</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/25/collection/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Collection">
+                        
+                        <span class="card-title">Collection</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. Collection 简介
+Java 中的集合是用于存储对象（引用数据类型）的工具类容器。它实现了常用的数据结构，提供了一系列公开的方法用于增加、删除、修改、查找和遍历数据，降低了日常开发成本。
+
+按照单个元素存储的 Collecti
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1106,60 +1062,8 @@ LinkedList 的底层数据结构是链表，LinkedList 是使用双链表的实�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LinkedList/" target="_blank">
-                        <span class="chip bg-color">LinkedList</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/12/hashcode-he-equals-fang-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="hashCode和equals方法">
-                        
-                        <span class="card-title">hashCode和equals方法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            1.Object类之equals方法 Java 源码里面 Object 中的 equals 方法: 
- public boolean equals(Object obj) {
-        return (this == obj);
-  
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hashCode和equals/" target="_blank">
-                        <span class="chip bg-color">hashCode和equals</span>
+                    <a href="/tags/Collection-概述/" target="_blank">
+                        <span class="chip bg-color">Collection 概述</span>
                     </a>
                     
                 </div>
