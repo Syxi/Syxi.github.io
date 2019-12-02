@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://goodboysuyan.ltd/2019/12/01/yi-chang/</loc>
-    <lastmod>2019-12-01</lastmod>
+    <loc>https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://goodboysuyan.ltd/2019/11/12/tostring/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://goodboysuyan.ltd/2019/11/10/string-lei/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://goodboysuyan.ltd/2019/11/08/lei-he-jie-kou/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://goodboysuyan.ltd/2019/12/02/io-liu/</loc>
+    <lastmod>2019-12-02</lastmod>
   </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/30/maven/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://goodboysuyan.ltd/2019/12/01/yi-chang/</loc>
     <lastmod>2019-12-01</lastmod>
   </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/23/hashmap/</loc>
@@ -13,22 +28,10 @@
     <loc>https://goodboysuyan.ltd/2019/11/25/collection/</loc>
     <lastmod>2019-11-30</lastmod>
   </url>  <url>
-    <loc>https://goodboysuyan.ltd/2019/11/12/object-lei/</loc>
-    <lastmod>2019-11-29</lastmod>
-  </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/09/fan-xing/</loc>
     <lastmod>2019-11-26</lastmod>
   </url>  <url>
-    <loc>https://goodboysuyan.ltd/2019/11/10/string-lei/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/21/linkedlist/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>https://goodboysuyan.ltd/2019/11/13/java-zhong-de-die-dai-qi/</loc>
-    <lastmod>2019-11-25</lastmod>
-  </url>  <url>
-    <loc>https://goodboysuyan.ltd/2019/11/08/java-yi-qie-jie-dui-xiang/</loc>
     <lastmod>2019-11-25</lastmod>
   </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/12/hashcode-he-equals-fang-fa/</loc>
@@ -42,8 +45,5 @@
   </url>  <url>
     <loc>https://goodboysuyan.ltd/2019/11/12/fu-xie-yu-chong-zai/</loc>
     <lastmod>2019-11-20</lastmod>
-  </url>  <url>
-    <loc>https://goodboysuyan.ltd/2019/11/08/lei/</loc>
-    <lastmod>2019-11-08</lastmod>
   </url>
 </urlset>
