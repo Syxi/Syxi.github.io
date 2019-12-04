@@ -4,16 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="覆写与重载, 师大">
+    <meta name="keywords" content="Java的关键字, 师大">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="1.覆写
-如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。
+    <meta name="description" content="1. this 关键字
+基本概念： 访问本类实例属性和方法。
+查找范围：先找本类，没有则找父类。
 
-public class Father {
-    public static void main(String[] args) {
-        ">
+1.1 this 可以做什么？
+ 1.可以区分本类的成员变量和局部变量。 
+ 2.可以调用构造方法 
+3.特异功能：单独使用时，表示当前对象">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@ public class Father {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>覆写与重载 | 苏彦的博客</title>
+    <title>Java的关键字 | 苏彦的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -295,13 +297,13 @@ public class Father {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/68.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        覆写与重载
+                        Java的关键字
                     </div>
                 </div>
             </div>
@@ -412,8 +414,8 @@ public class Father {
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/覆写-重载/" target="_blank">
-                            <span class="chip bg-color">覆写 重载</span>
+                        <a href="/tags/关键字/" target="_blank">
+                            <span class="chip bg-color">关键字</span>
                         </a>
                         
                     </div>
@@ -436,7 +438,7 @@ public class Father {
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-12
+                    2019-12-03
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -450,14 +452,14 @@ public class Father {
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    214
+                    845
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -473,34 +475,102 @@ public class Father {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-覆写"><a href="#1-覆写" class="headerlink" title="1.覆写"></a>1.覆写</h2><blockquote>
-<p>如果父类定义的方法达不到子类的期望，那么子类可以重新实现方法覆盖父类的实现。</p>
+                <h2 id="1-this-关键字"><a href="#1-this-关键字" class="headerlink" title="1. this 关键字"></a>1. this 关键字</h2><blockquote>
+<p><strong>基本概念：</strong> 访问本类实例属性和方法。</p>
+<p><strong>查找范围：</strong>先找本类，没有则找父类。</p>
 </blockquote>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Father father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        father<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="1-1-this-可以做什么？"><a href="#1-1-this-可以做什么？" class="headerlink" title="1.1 this 可以做什么？"></a>1.1 this 可以做什么？</h3><blockquote>
+<p> <strong>1.可以区分本类的成员变量和局部变量。</strong> </p>
+<p> <strong>2.可以调用构造方法</strong> </p>
+<p><strong>3.特异功能：</strong>单独使用时，表示当前对象。 例 synchronized(this) {…}</p>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyDate</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//年</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> year<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//月</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> month<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//日</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> day<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//构造方法</span>
+    <span class="token comment" spellcheck="true">//需求：在创建日期对象的时候，默认的日期是:1970-1-1</span>
+    <span class="token function">MyDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//通过this调用有参的构造方法</span>
+        <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token number">1970</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//必须出现在第一行，否则将编译报错</span>
+        <span class="token comment" spellcheck="true">//构造方法不能这样调用</span>
+        <span class="token comment" spellcheck="true">//MyDate(1970,1,1);Error</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"叫爸爸"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//构造方法</span>
+    <span class="token function">MyDate</span><span class="token punctuation">(</span><span class="token keyword">int</span> year<span class="token punctuation">,</span><span class="token keyword">int</span> month<span class="token punctuation">,</span><span class="token keyword">int</span> day<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>month <span class="token operator">=</span> month<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>day <span class="token operator">=</span> day<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"祖安"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setYear</span><span class="token punctuation">(</span><span class="token keyword">int</span> year<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// this.year 表示的是成员变量，year 是传入的参数</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-覆写总结"><a href="#2-覆写总结" class="headerlink" title="2.覆写总结"></a>2.覆写总结</h2><blockquote>
-<p><strong>一大两小两同</strong></p>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-super-关键字"><a href="#2-super-关键字" class="headerlink" title="2. super 关键字"></a>2. super 关键字</h2><blockquote>
+<p><strong>基本概念：</strong>由子类访问父类中的实例属性和方法。</p>
+<p><strong>查找范围：</strong>直接查找父类。</p>
+</blockquote>
+<h3 id="3-final-关键字"><a href="#3-final-关键字" class="headerlink" title="3. final 关键字"></a>3. final 关键字</h3><blockquote>
+<p>final 是最终的不可变的意思。</p>
+<p>修饰类：表示类不可以被继承。</p>
+<p>方法：表示方法不可以被重写，但可以重载。</p>
+<p>变量：表示变量一旦被赋值就不可以更改它是值。</p>
+</blockquote>
+<h3 id="3-1-final-修饰成员变量和类变量"><a href="#3-1-final-修饰成员变量和类变量" class="headerlink" title="3.1 final 修饰成员变量和类变量"></a>3.1 final 修饰成员变量和类变量</h3><blockquote>
 <ul>
-<li><strong>一大</strong>：子类的方法访问权限控制符只能相同或变大。</li>
-<li><strong>两小</strong>：子类抛出异常和方法返回值只能变小（或相同），都能够转型成父类对象。子类的返回值、抛出异常，与父类存在继承关系。</li>
-<li><strong>两同</strong>：方法名和参数必须完全相同。</li>
+<li>如果 final 修饰的是类变量，只能在静态初始化块中指定初始值或者声明该类变量时指定初始值。</li>
+<li>如果final 修饰的是成员变量，可以在非静态初始化块声明该变量或者构造器中执行初始值。</li>
 </ul>
 </blockquote>
-<h2 id="3-重载"><a href="#3-重载" class="headerlink" title="3.重载"></a>3.重载</h2><blockquote>
-<p>在同一个类中，如果多个方法有相同的名字，不同的参数（参数个数、顺序、类型不同），即称为重载。</p>
+<h3 id="3-2-final-修饰局部变量"><a href="#3-2-final-修饰局部变量" class="headerlink" title="3.2 final 修饰局部变量"></a>3.2 final 修饰局部变量</h3><blockquote>
+<p>系统不会为局部变量进行初始化，局部变量必须由程序员显示初始化。因此使用 final 修饰局部变量时，即可在定义时指定默认值（后面的代码不能对变量再赋值）也可以不指定默认值，而在后面的代码中对 final 变量赋初值（仅一次）。</p>
+</blockquote>
+<h3 id="3-3-final-修饰基本类型数据和引用类型数据"><a href="#3-3-final-修饰基本类型数据和引用类型数据" class="headerlink" title="3.3 final 修饰基本类型数据和引用类型数据"></a>3.3 final 修饰基本类型数据和引用类型数据</h3><blockquote>
+<ul>
+<li>如果是修饰基本数据类型的数据的变量，则其数值一旦在初始化之后便不能更改。</li>
+<li>如果是引用类型的变量，则在其初始化之后便不能再让其指向另一个对象。但是引用的值是可以改变的。</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FinalTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span>
+        a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 引用的值可变</span>
+        a <span class="token operator">=</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 非法，a 的指向不可再变</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-4-final-、finally-、finalize"><a href="#3-4-final-、finally-、finalize" class="headerlink" title="3.4 final 、finally 、finalize"></a>3.4 final 、finally 、finalize</h3><p><strong>final</strong></p>
+<blockquote>
+<ul>
+<li>final可以修饰类,不能被继承</li>
+<li>修饰方法,不能被重写</li>
+<li>修饰变量,只能赋值一次</li>
+</ul>
+</blockquote>
+<p><strong>finally</strong></p>
+<blockquote>
+<p> finally 是 try 语句中的一个语句体,不能单独使用。</p>
+<p>finally 语句体中的语句一定会执行 </p>
+</blockquote>
+<p><strong>finalize</strong></p>
+<blockquote>
+<p> finalize 是 Object 中的一个方法, 在垃圾收集期间进行一些重要的清除或清扫工作(如关闭流等操作)。 </p>
+<p>当没有引用指向这个对象时，由对象的垃圾回收器在回收之前调用此方法。 </p>
+</blockquote>
+<h2 id="4-instanceof"><a href="#4-instanceof" class="headerlink" title="4. instanceof"></a>4. instanceof</h2><p>其实 instanceof 就是一个操作符，</p>
+<p>A 通常是引用变量，B 通常是一个类或者是接口 ，语法形式：</p>
+<pre class="line-numbers language-java"><code class="language-java"> A <span class="token keyword">instanceof</span> <span class="token class-name">B</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<ol>
+<li>A 是否是 B 的实例</li>
+<li>A 是否是 B 子类的实例</li>
+<li>A 是否是 B  接口实现类的实例</li>
+</ol>
 </blockquote>
 
             </div>
@@ -660,9 +730,9 @@ public class Father {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《覆写与重载》
+                    《Java的关键字》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/12/fu-xie-yu-chong-zai/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/03/java-de-guan-jian-zi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 苏彦
             </a> 采用
@@ -703,7 +773,7 @@ public class Father {
         repo: 'Syxi.github.io',
         owner: 'Syxi',
         admin: "Syxi",
-        id: '2019/11/12/fu-xie-yu-chong-zai/',
+        id: '2019/12/03/java-de-guan-jian-zi/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -986,83 +1056,36 @@ public class Father {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/12/tostring/">
+                <a href="/2019/12/03/java-de-guan-jian-zi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="toString()">
+                        <img src="/medias/featureimages/68.jpg" class="responsive-img" alt="Java的关键字">
                         
-                        <span class="card-title">toString()</span>
+                        <span class="card-title">Java的关键字</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. toString()方法Object 中的 toString() 方法是返回 java 对象的字符串表示形式
-  public String toString() {
-        return getClass().getName
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/toString/" target="_blank">
-                        <span class="chip bg-color">toString</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/10/string-lei/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/47.jpg" class="responsive-img" alt="String类">
-                        
-                        <span class="card-title">String类</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            1.String类
- String 类是用来创建和操作字符串 的。在  Java 中字符串属于对象。
+                            1. this 关键字
+基本概念： 访问本类实例属性和方法。
+查找范围：先找本类，没有则找父类。
 
-2.String为什么不可变public final class String
-    implements java.io.Seria
+1.1 this 可以做什么？
+ 1.可以区分本类的成员变量和局部变量。 
+ 2.可以调用构造方法 
+3.特异功能：单独使用时，表示当前对象
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-03
                             </span>
                         <span class="publish-author">
                             
@@ -1076,11 +1099,67 @@ public class Father {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/String类/" target="_blank">
-                        <span class="chip bg-color">String类</span>
+                    <a href="/tags/关键字/" target="_blank">
+                        <span class="chip bg-color">关键字</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/02/io-liu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="IO流">
+                        
+                        <span class="card-title">IO流</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. IO 流是什么？
+ 用来进行有顺序的输入输出操作的流就称为IO流 。 IO流的主要作用是用来处理设备之间的数据传输 。
+
+2. IO 流的分类按照流向分类：
+
+
+输入流（InputStream和Reader）：从硬盘或者别的地方读到内
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IO流/" class="post-category" target="_blank">
+                                    IO流
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IO流/" target="_blank">
+                        <span class="chip bg-color">IO流</span>
                     </a>
                     
                 </div>
