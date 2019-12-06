@@ -586,9 +586,8 @@ java<span class="token punctuation">.</span>io<span class="token punctuation">.<
         <span class="token punctuation">}</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"throw后面的代码不会执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="5-自定义异常"><a href="#5-自定义异常" class="headerlink" title="5. 自定义异常"></a>5. 自定义异常</h2><blockquote>
-<p> 当java里面的异常无法满足开发者的需求时，可以自定义异常。 自定义的异常类型是继承 RuntimeException 或 Exception 。</p>
-</blockquote>
+<h2 id="5-自定义异常"><a href="#5-自定义异常" class="headerlink" title="5. 自定义异常"></a>5. 自定义异常</h2><p>当java里面的异常无法满足开发者的需求时，可以自定义异常。 自定义的异常类型是继承 RuntimeException 或 Exception 。</p>
+<p><strong>自定义一个非法注册名的异常类</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 自定义一个非法注册名的异常类</span>
 <span class="token comment" spellcheck="true">// public class IllegalNameException extends RuntimeException  运行时异常</span>
 <span class="token comment" spellcheck="true">// 编译时异常</span>
@@ -602,6 +601,7 @@ java<span class="token punctuation">.</span>io<span class="token punctuation">.<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>使用自定义异常</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 使用自定义异常</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 注册的方法</span>
@@ -615,6 +615,7 @@ java<span class="token punctuation">.</span>io<span class="token punctuation">.<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>单元测试</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 单元测试</span>
 <span class="token keyword">class</span> <span class="token class-name">UserServiceTest</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 用户输入的名字</span>
